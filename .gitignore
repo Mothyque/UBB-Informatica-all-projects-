@@ -1,0 +1,55 @@
+# === Fișiere compilate și build ===
+*.out
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+
+/build/
+/bin/
+/dist/
+/Debug/
+/Release/
+
+# === Qt ===
+*.pro.user
+*.qrc.depends
+*.autosave
+Makefile
+moc_*
+ui_*
+qrc_*
+
+# === CMake ===
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# === VSCode ===
+.vscode/
+
+# === IDE JetBrains (CLion, IntelliJ) ===
+.idea/
+*.iml
+
+# === Python ===
+*.pyc
+__pycache__/
+
+# === Logs și fișiere temporare ===
+*.log
+*.tmp
+*.swp
+*.bak
+*.old
+
+# === Fișiere sistem ===
+.DS_Store
+Thumbs.db
+
+# === Fișiere de configurare locală / secrete ===
+.env
+*.secret
