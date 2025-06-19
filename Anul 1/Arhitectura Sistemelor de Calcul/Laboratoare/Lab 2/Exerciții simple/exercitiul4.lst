@@ -1,0 +1,33 @@
+     1                                  bits 32
+     2                                  
+     3                                  
+     4                                  global start        
+     5                                  
+     6                                  extern exit              
+     7                                  import exit msvcrt.dll  
+     8                                  extern printf  
+     9                                  import printf msvcrt.dll
+    10                                  
+    11                                  segment data use32 class=data
+    12 00000000 05000000                    a dd 5
+    13 00000004 06000000                    b dd 6
+    14 00000008 52657A756C74617475-         print_frmt db "Rezultatul este %d", 0
+    14 00000011 6C2065737465202564-
+    14 0000001A 00                 
+    15                                     
+    16                                      
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 A1[00000000]                    mov eax, [a]
+    20 00000005 8B1D[04000000]                  mov ebx, [b]
+    21                                          
+    22 0000000B 29D8                            sub eax, ebx ; eax += ebx (a + b)
+    23                                          
+    24 0000000D 50                              push eax
+    25 0000000E 68[08000000]                    push print_frmt
+    26 00000013 FF15[00000000]                  call[printf]
+    27                                          
+    28 00000019 83C408                          add esp, 4 * 2 
+    29                                          
+    30 0000001C 6A00                            push    dword 0      
+    31 0000001E FF15[00000000]                  call    [exit]       

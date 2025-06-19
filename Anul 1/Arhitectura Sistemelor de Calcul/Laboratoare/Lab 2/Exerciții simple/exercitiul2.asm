@@ -1,0 +1,29 @@
+bits 32
+
+
+global start        
+
+extern exit              
+import exit msvcrt.dll  
+extern printf  
+import printf msvcrt.dll
+
+segment data use32 class=data
+    print_frmt db "Rezultatul este %d", 0
+   
+    
+segment code use32 class=code
+    start:
+        mov eax, 1
+        mov ebx, 15
+        
+        add eax, ebx ; eax += ebx (1 + 15)
+        
+        push eax
+        push print_frmt
+        call[printf]
+        
+        add esp, 4 * 2 
+        
+        push    dword 0      
+        call    [exit]       
