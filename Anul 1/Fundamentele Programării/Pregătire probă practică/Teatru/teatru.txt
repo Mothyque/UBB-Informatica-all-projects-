@@ -1,0 +1,10 @@
+titlu1,regizor1,Altele,2
+titlu2,regizor2,Altele,3
+titlu3,regizor3,Drama,3
+titlu4,regizor4,Drama,2
+titlu5,regizor2,Satira,2
+titlu6,regizor3,Altele,2
+titlu7,regizor3,Drama,3
+titlu8,regizor4,Comedie,3
+titlu9,regizor1,Altele,2
+titlu10,regizor1,Drama,1
