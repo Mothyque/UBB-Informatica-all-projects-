@@ -1,0 +1,10 @@
+titlu1,artist1,Rock,15
+titlu2,artist2,Rock,4
+titlu3,artist1,Altele,4
+titlu4,artist3,Pop,3
+titlu5,artist2,Jazz,4
+titlu6,artist2,Pop,3
+titlu7,artist3,Jazz,4
+titlu8,artist1,Rock,6
+titlu9,artist2,Altele,3
+titlu10,artist3,Altele,3
