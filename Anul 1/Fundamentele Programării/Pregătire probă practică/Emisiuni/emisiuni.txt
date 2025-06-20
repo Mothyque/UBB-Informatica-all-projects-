@@ -1,0 +1,9 @@
+Emisiune2,Sport,4, Descriere
+Emisiune3,Informare,1, Descriere
+Emisiune4,Film,2, Descriere
+Emisiune5,Sport,5, Descriere
+Emisiune6,Stiri,3, Descriere
+Emisiune7,Informare,2, Descriere
+Emisiune8,Film,1, Descriere
+Emisiune9,Film,4, Descriere
+Emisiune10,EmSport,3, Descriere
