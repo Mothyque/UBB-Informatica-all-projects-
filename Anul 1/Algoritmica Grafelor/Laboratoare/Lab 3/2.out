@@ -1,0 +1,15 @@
+Muchiile reponderate sunt:
+0 2 3
+1 0 1
+1 2 5
+2 0 0
+
+Matricea drumurilor minime cu ponderi pozitive este:
+0 INF 3 
+1 0 4 
+0 INF 0 
+
+Distantele minime de la nodul sursa la celelalte noduri sunt:
+0 INF 6 
+-2 0 4 
+-3 INF 0 
