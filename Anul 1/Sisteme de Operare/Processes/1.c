@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main()
+{
+	int f[2];
+	int res = pipe(f);
+	if (res == -1)
+	{
+		perror("pipe()");
+		exit(EXIT_FAILURE);
+	}
+
+	int pid = fork();
+	if (pid == -1)
+	{
+		perror("fork()");
+		exit(EXIT_FAILURE);
+	}
+	int a;
+	if (pid == 0)
+	{
+		close(f[1]);
+		read(f[0],&a,sizeof(int));
+		if (a % 2 == 0)
+		{
+			printf("Numarul %d este par. \n", a);
+		}
+		else
+		{
+			printf("Numarul %d este impar \n", a);
+		}
+		close(f[0]);
+		exit(0);
+	}
+	else
+	{
+		close(f[0]);
+		scanf("%d",&a);
+		write(f[1],&a,sizeof(int));
+		int status;
+		wait(&status);
+		close(f[1]);
+	}
+	return 0;
+
+}
