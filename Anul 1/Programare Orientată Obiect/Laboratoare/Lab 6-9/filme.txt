@@ -1,0 +1,21 @@
+Inception,Christopher Nolan,2010,Leonardo DiCaprio
+Se7en,David Fincher,1995,Morgan Freeman
+The Shawshank Redemption,Frank Darabont,1994,Tim Robbins
+The Butterfly Effect,Eric Bress,2004,Ashton Kutcher
+The Silence of the Lambs,Jonathan Demme,1991,Anthony Hopkins
+La La Land,Damien Chazelle,2016,Ryan Gosling
+The Godfather,Francis Ford Coppola,1972,Marlon Brando
+Pulp Fiction,Quentin Tarantino,1994,John Travolta
+Fight Club,David Fincher,1999,Edward Norton
+The Matrix,Lana Wachowski,1999,Keanu Reeves
+Forrest Gump,Robert Zemeckis,1994,Tom Hanks
+Interstellar,Christopher Nolan,2014,Matthew McConaughey
+Inglourious Basterds,Quentin Tarantino,2009,Brad Pitt
+The Dark Knight,Christopher Nolan,2008,Christian Bale
+The Prestige,Christopher Nolan,2006,Hugh Jackman
+The Departed,Martin Scorsese,2006,Leonardo DiCaprio
+Gladiator,Ridley Scott,2000,Russell Crowe
+The Green Mile,Frank Darabont,1999,Tom Hanks
+The Social Network,David Fincher,2010,Jesse Eisenberg
+Whiplash,Damien Chazelle,2014,Miles Teller
+Goodfellas,Martin Scorsese,1990,Robert De Niro
