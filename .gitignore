@@ -1,4 +1,4 @@
-# === Fișiere compilate și build ===
+# === Fișiere compilate și build (C/C++) ===
 *.out
 *.o
 *.obj
@@ -7,7 +7,6 @@
 *.so
 *.a
 *.lst
-
 /build/
 /bin/
 /dist/
@@ -29,16 +28,41 @@ CMakeCache.txt
 cmake_install.cmake
 Makefile
 
-# === VSCode ===
+# === IDE-uri (VSCode, JetBrains, Visual Studio) ===
 .vscode/
-
-# === IDE JetBrains (CLion, IntelliJ) ===
 .idea/
 *.iml
+.vs/
+*.user
+*.suo
+*.db
 
-# === Python ===
+# === Python (Esential) ===
 *.pyc
 __pycache__/
+venv/
+.venv/
+env/
+# Daca folosesti Jupyter Notebooks
+.ipynb_checkpoints
+
+# === Java (Facultate) ===
+*.class
+*.war
+*.ear
+*.jar
+
+# === Node.js / Web Development ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+
+# === Arhive și fișiere mari ===
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.iso
 
 # === Logs și fișiere temporare ===
 *.log
@@ -50,7 +74,9 @@ __pycache__/
 # === Fișiere sistem ===
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# === Fișiere de configurare locală / secrete ===
+# === Fișiere de configurare locală / Secrete ===
 .env
 *.secret
+credentials.json
