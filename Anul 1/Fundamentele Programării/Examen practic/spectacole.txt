@@ -1,0 +1,18 @@
+Titlu1,Artist1,Altele,3
+Titlu2,Artist2,Comedie,7
+Titlu3,Artist3,Balet,2
+Titlu4,Artist1,Comedie,4
+Titlu5,Artist3,Balet,3
+Titlu6,Artist2,Comedie,3
+Titlu7,Artist2,Comedie,2
+Titlu8,Artist2,Concert,2
+Titlu9,Artist1,Concert,1
+Titlu10,Artist3,Balet,3
+Titlu11,Artist2,Comedie,3
+Titlu12,Artist2,Balet,3
+Titlu22,Artist2,Comedie,2
+lunodu ga,ucebito ep,Altele,2
+najos feze,ahubapi uh,Altele,3
+kifaroh wagi,efom iqaze,Concert,3
+qecamay ga,ihi ubivu,Concert,4
+noy jecozo,upigov igas,Balet,2

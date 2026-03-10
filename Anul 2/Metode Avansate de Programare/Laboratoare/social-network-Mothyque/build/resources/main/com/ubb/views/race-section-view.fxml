@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+
+<HBox spacing="0" prefHeight="500.0" prefWidth="700.0"
+      style="-fx-background-color: #2c3e50;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ubb.controller.RaceSectionController">
+
+    <VBox spacing="10.0" HBox.hgrow="ALWAYS" style="-fx-background-color: #2c3e50;">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="📢 Race Details"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+        </HBox>
+
+        <ListView fx:id="systemMessagesList" VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: transparent; -fx-control-inner-background: #2c3e50; -fx-background-insets: 0; -fx-padding: 0;"/>
+    </VBox>
+
+    <VBox minWidth="2.0" maxWidth="2.0" style="-fx-background-color: #1a252f;" HBox.hgrow="NEVER" />
+
+    <VBox alignment="CENTER" spacing="15.0" prefWidth="250.0" minWidth="200.0"
+          style="-fx-background-color: #2c3e50;">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Actions" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+
+        <Button text="🏊 Join a Race" onAction="#handleJoinRaceClick"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 150; -fx-pref-height: 40; -fx-cursor: hand;"
+                fx:id="btnJoinRace"/>
+
+        <Label text="(Only for Swimming Ducks)"
+               style="-fx-font-style: italic; -fx-text-fill: #bdc3c7; -fx-font-size: 10px;"/>
+
+        <Region prefHeight="30.0" />
+
+        <Button text="⬅ Back to Menu" onAction="#handleBackToMainMenu"
+                style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150; -fx-pref-height: 35; -fx-cursor: hand;"/>
+    </VBox>
+
+</HBox>

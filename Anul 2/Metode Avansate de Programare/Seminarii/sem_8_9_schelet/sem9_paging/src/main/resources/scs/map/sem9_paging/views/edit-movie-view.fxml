@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.ubbcluj.cs.map.controller.EditMovieController">
+   <children>
+      <Button layoutX="102.0" layoutY="312.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="201.0" layoutY="312.0" mnemonicParsing="false" text="Cancel" />
+   </children>
+</AnchorPane>

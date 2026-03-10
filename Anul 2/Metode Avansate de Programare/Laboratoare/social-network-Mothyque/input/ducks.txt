@@ -1,0 +1,11 @@
+16,Darkwing,darkwing@duckmail.com,shadoW12!,FLYING_AND_SWIMMING,45.0,20.0
+1,donald,donald@duckmail.com,quack,FLYING,35.5,12.0
+17,Magica,magy@duckmail.com,Spell88.12,FLYING,25.0,10.0
+2,daisy,daisy@duckmail.com,duck123,SWIMMING,20.0,10.0
+18,SpeedyDuck,speedy@duckmail.com,IamSpeed129.1,SWIMMING,26.0,30.0
+3,scrooge,scrooge@duckmail.com,gold,FLYING_AND_SWIMMING,50.0,25.0
+4,launchpad,launchpad@duckmail.com,plane,FLYING,60.5,18.0
+5,howard,howard@duckmail.com,marvel,SWIMMING,15.0,8.0
+6,RataSmechere,cool_duck@hotmail.com,Iamcool,SWIMMING,20.0,9.0
+14,Quacky,quacky@duckmail.com,IamQuack123.,FLYING,30.0,11.0
+15,Webby, webby@duckmail.com,IamWebby!2,SWIMMING,18.0,7.0

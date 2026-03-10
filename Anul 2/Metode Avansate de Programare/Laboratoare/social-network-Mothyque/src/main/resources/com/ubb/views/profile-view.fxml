@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0"
+      style="-fx-background-color: #2c3e50;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ubb.controller.ProfileController">
+
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Button onAction="#onBackToMenu"
+                style="-fx-background-color: transparent; -fx-text-fill: #bdc3c7; -fx-font-weight: bold; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-cursor: hand;"
+                text="⬅ Back to Menu" />
+    </HBox>
+
+    <VBox alignment="CENTER" maxWidth="500" spacing="15" VBox.vgrow="ALWAYS">
+
+        <Label fx:id="avatarLabel" alignment="CENTER"
+               style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 100; -fx-min-width: 120; -fx-min-height: 120;"
+               text="U">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="usernameLabel" style="-fx-text-fill: #ecf0f1; -fx-font-weight: bold;" text="Username">
+            <font>
+                <Font size="32.0" />
+            </font>
+        </Label>
+
+        <HBox alignment="CENTER" spacing="30" style="-fx-padding: 10;">
+            <VBox alignment="CENTER">
+                <Label fx:id="typeLabel" style="-fx-text-fill: #f1c40f; -fx-font-weight: bold;" text="Type">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label style="-fx-text-fill: #7f8c8d;" text="User Type" />
+            </VBox>
+
+            <Region prefWidth="1" style="-fx-background-color: #7f8c8d;" />
+
+            <VBox alignment="CENTER">
+                <Label fx:id="friendsCountLabel" style="-fx-text-fill: #ecf0f1; -fx-font-weight: bold;" text="0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label style="-fx-text-fill: #7f8c8d;" text="Friends" />
+            </VBox>
+        </HBox>
+
+        <Region prefHeight="30" />
+
+        <Button fx:id="addFriendButton" onAction="#onAddFriend"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 250; -fx-padding: 10; -fx-cursor: hand; -fx-background-radius: 8;"
+                text="➕ Add Friend">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+
+    </VBox>
+</VBox>

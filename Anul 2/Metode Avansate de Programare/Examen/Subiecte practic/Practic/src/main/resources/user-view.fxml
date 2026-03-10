@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserController">
+   <children>
+      <Label fx:id="lblBalance" layoutX="447.0" layoutY="350.0" text="Label">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableCoins" layoutX="14.0" layoutY="91.0" prefHeight="235.0" prefWidth="570.0" />
+      <Button fx:id="btnBuy" layoutX="75.0" layoutY="348.0" mnemonicParsing="false" onAction="#onBuy" prefHeight="25.0" prefWidth="66.0" text="Buy">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSell" layoutX="220.0" layoutY="348.0" mnemonicParsing="false" onAction="#onSell" prefHeight="39.0" prefWidth="66.0" text="Sell">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblUser" layoutX="17.0" layoutY="37.0" prefHeight="17.0" prefWidth="116.0" text="Label">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

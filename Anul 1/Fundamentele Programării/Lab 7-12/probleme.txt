@@ -1,0 +1,6 @@
+1_1,Se da un sir de numere intregi. Cel mai mare divizor comun a doua numere.,4
+1_2,Se da un sir de numere intregi. Media aritmetica a n numere naturale.,5
+2_2,Se da un sir de numere intregi. Sa se determine daca sirul este format din numere prime distincte si ordonate crescator.,5
+3_5,Se da un sir de numere intregi. Sa se determine daca sirul este palindrom.,6
+3_6,Se da un sir de numere intregi. Sa se determine daca sirul este format din numere prime.,7
+5_4,Se da un sir de numere intregi. Sa se determine daca sirul este format din numere prime si palindrom.,8

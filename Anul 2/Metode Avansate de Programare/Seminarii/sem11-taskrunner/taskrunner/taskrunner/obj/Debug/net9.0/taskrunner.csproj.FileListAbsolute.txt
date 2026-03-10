@@ -1,0 +1,28 @@
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.exe
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.deps.json
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.runtimeconfig.json
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.dll
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.pdb
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.AssemblyInfoInputs.cache
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.AssemblyInfo.cs
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.csproj.CoreCompileInputs.cache
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.dll
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\refint\taskrunner.dll
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.pdb
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.genruntimeconfig.cache
+C:\Users\camel\RiderProjects\taskrunner\taskrunner\obj\Debug\net9.0\ref\taskrunner.dll
+D:\00 MAP\curs\c#\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.exe
+D:\00 MAP\curs\c#\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.deps.json
+D:\00 MAP\curs\c#\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.runtimeconfig.json
+D:\00 MAP\curs\c#\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.dll
+D:\00 MAP\curs\c#\taskrunner\taskrunner\bin\Debug\net9.0\taskrunner.pdb
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.GeneratedMSBuildEditorConfig.editorconfig
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.AssemblyInfoInputs.cache
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.AssemblyInfo.cs
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.csproj.CoreCompileInputs.cache
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.dll
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\refint\taskrunner.dll
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.pdb
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\taskrunner.genruntimeconfig.cache
+D:\00 MAP\curs\c#\taskrunner\taskrunner\obj\Debug\net9.0\ref\taskrunner.dll

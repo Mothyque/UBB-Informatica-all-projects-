@@ -1,0 +1,14 @@
+Stephen,Curry,188,Fundas
+Kevin,Durant,208,Extrema
+Kyrie,Irving,193,Fundas
+LeBron,James,205,Extrema
+Kawhi,Leonard,201,Extrema
+Giannis,Antetokounmpo,211,Extrema
+Anthony,Davis,208,Pivot
+Luka,Doncic,201,Fundas
+Damian,Lillard,191,Fundas
+Nikola,Jokic,208,Pivot
+Dennis,Seeley,191,Fundas
+Zavier,Simpson,183,Fundas
+Sasu,Salin,190,Fundas
+Victor,Wembanyama,220,Pivot

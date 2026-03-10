@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: #282a36;"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ubb.controller.MessageController">
+
+    <center>
+        <SplitPane dividerPositions="0.3"
+                   style="-fx-background-color: transparent; -fx-padding: 0; -fx-box-border: transparent;">
+
+            <VBox spacing="5.0" style="-fx-background-color: #282a36;">
+                <padding>
+                    <Insets bottom="10" left="10" right="5" top="10" />
+                </padding>
+
+                <Label style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #f8f8f2;" text="Conversations" />
+
+                <ListView fx:id="usersList" VBox.vgrow="ALWAYS"
+                          style="-fx-background-color: transparent;
+                                 -fx-control-inner-background: #282a36;
+                                 -fx-background-insets: 0;
+                                 -fx-padding: 0;
+                                 -fx-border-width: 0;
+                                 -fx-focus-color: transparent;" />
+            </VBox>
+
+            <VBox spacing="10.0" style="-fx-background-color: #383a59;">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+
+                <HBox style="-fx-background-color: #44475a; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Label fx:id="lblChatWith" style="-fx-font-weight: bold; -fx-text-fill: #f8f8f2; -fx-font-size: 14px;" text="Select a user to start chatting" />
+                </HBox>
+
+                <ListView fx:id="messagesList" VBox.vgrow="ALWAYS"
+                          style="-fx-background-color: transparent;
+                                 -fx-background-insets: 0;
+                                 -fx-control-inner-background: #383a59;
+                                 -fx-padding: 0;
+                                 -fx-border-width: 0;
+                                 -fx-focus-color: transparent;" />
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 0 5 0 5;">
+
+                    <TextArea fx:id="txtMessage" prefRowCount="1" promptText="Type a message..." wrapText="true" HBox.hgrow="ALWAYS"
+                              style="-fx-control-inner-background: #44475a; /* Fundal mai deschis */
+                                     -fx-background-color: #44475a;         /* Asigura fundalul si la margini */
+                                     -fx-text-fill: white;
+                                     -fx-prompt-text-fill: #bdc3c7;
+                                     -fx-background-radius: 20;             /* Colturi rotunjite (Capsula) */
+                                     -fx-border-color: #6272a4;             /* Bordura mov deschis */
+                                     -fx-border-radius: 20;                 /* Bordura rotunjita */
+                                     -fx-border-width: 1;                   /* Grosime bordura */
+                                     -fx-focus-color: transparent;
+                                     -fx-faint-focus-color: transparent;
+                                     -fx-padding: 0 10 0 10;                /* Padding intern text */
+                                     -fx-highlight-fill: #bd93f9;           /* Culoare selectie text */
+                                     -fx-highlight-text-fill: white;" />
+
+                    <Button minWidth="70.0" onAction="#onSendMessage"
+                            style="-fx-background-color: #6272a4; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 40; -fx-background-radius: 20; -fx-cursor: hand;"
+                            text="Send" />
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 15; -fx-background-color: #282a36;">
+
+            <Button onAction="#onLogout" style="-fx-background-color: #ff5555; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Logout" />
+
+            <Button onAction="#onOpenFriendRequests" style="-fx-background-color: #6272a4; -fx-text-fill: white; -fx-cursor: hand;" text="Friend Requests" />
+
+            <Button onAction="#onOpenRaceSection" style="-fx-background-color: #bd93f9; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="🏎️ Race Section" />
+
+            <Button onAction="#onNewSession" style="-fx-background-color: #ffb86c; -fx-text-fill: white; -fx-cursor: hand;" text="New Session" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <HBox alignment="CENTER" spacing="5">
+                <TextField fx:id="searchUserField" promptText="Find user..."
+                           style="-fx-background-color: #44475a; -fx-text-fill: white; -fx-background-radius: 15; -fx-padding: 5 10; -fx-pref-width: 150;" />
+                <Button defaultButton="true" onAction="#handleSearchUser"
+                        style="-fx-background-color: #50fa7b; -fx-text-fill: #282a36; -fx-background-radius: 15; -fx-cursor: hand; -fx-font-weight: bold;" text="Search" />
+            </HBox>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang = "ro">
+    <head> 
+        <meta charset="UTF-8">
+        <title> Admin Page</title>
+    </head>
+    <body>
+        <h1> PAGINĂ ADMIN</h1>
+        <h2> Această pagină este dedicată strict adminilor pentru gestionarea jucătorilor </h2>
+        <h3> Dacă nu sunteți un admin, vă rog să părăsiți pagina</h3>
+        <p> <a href="mainpage5.htm" title="Spre pagină principală">Go to Main Page</a> </p>
+        <p> <span> Notă informativă: </span> Vă rugăm să verificați datele <strong> de două ori </strong>înainte de a le salva. </p>
+        <form name = "add_player" action="#" target = "_blank"> 
+            <fieldset> 
+                <legend> Adaugă jucător nou </legend>
+                <b>
+                    Ligă:
+                    <input type = "text" name = "Player League" size = "16" value = "Euroleague" readonly>
+                    <br>
+                </b>
+                <b> 
+                    Nume:
+                    <input type = "text" name = "Player Name" size = "16" maxlength="50">
+                    <br>
+                </b> 
+                <b> 
+                    Țară:
+                    <input type = "text" name = "Player Country" size = "16" maxlength="30">
+                    <br>
+                </b> 
+                <b> 
+                    Poziție:
+                    PG <input type = "radio" name = "Player Position" value="PG" checked>
+                    SG <input type = "radio" name = "Player Position" value="SG">
+                    SF <input type = "radio" name = "Player Position" value="SF">
+                    PF <input type = "radio" name = "Player Position" value="PF">
+                    C <input type = "radio" name = "Player Position" value="C">
+                    <br>
+                </b> 
+                <b> 
+                    Înălțime (cm):
+                    <input type = "text" name = "Player Height" size = "16" maxlength = "3">
+                    <br>
+                </b> 
+                <b> 
+                    Greutate (kg):
+                    <input type = "text" name = "Player Weight" size = "16" maxlength = "3">
+                    <br>
+                </b> 
+                <b>
+                    Echipă:
+                        <select name  = "Player Team">
+                            <option>
+                                Anadolu Efes Istanbul
+                            </option>
+                            <option>
+                                AS Monaco
+                            </option>
+                            <option>
+                                Crvena Zvezda Meridianbet Belgrade
+                            </option>
+                            <option>
+                                Dubai Basketball
+                            </option>
+                            <option>
+                                EA7 Emporio Armani Milan
+                            </option>
+                            <option selected>
+                                FC Barcelona
+                            </option>
+                            <option>
+                                FC Bayern Munich
+                            </option>
+                            <option>
+                                Fenerbahce Beko Istanbul
+                            </option>
+                        </select>
+                        <br>
+                </b>
+
+                <b> 
+                    Număr Tricou:
+                    <input type = "number" name = "Player Number" max="99" step="1">
+                    <br>
+                </b> 
+                <b>
+                    Experiență NBA:
+                    <input type="checkbox" name = "Player Nba" value = "Yes">
+                    <br>
+                </b>
+                <b>
+                    Accidentat:
+                    <input type="checkbox" name = "Player Injured" value = "Yes" disabled>
+                    <br>
+                </b>
+                <b>
+                    Descriere:
+                    <br>
+                    <textarea name = "Player Description" rows = "3" cols = "100"></textarea>
+                </b>
+                <b>
+                    Aptitudini:
+                    <br>
+                    <select name = "Player Skills" multiple size = "5">
+                        <option value = "Shooting">Shooting</option>
+                        <option value = "Passing">Passing</option>
+                        <option value = "Dribbling">Dribbling</option>
+                        <option value = "Defense">Defense</option>
+                        <option value = "Rebounding">Rebounding</option>
+                    </select>
+                    <br><br>
+                </b>
+                <input type = "submit" value = "Adaugă Jucător">
+                <input type = "reset" value = "Resetează Formular">
+            </fieldset>
+        </form>
+    </body>
+</html>

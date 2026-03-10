@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.Region?>
+<BorderPane fx:id="mainLayout"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ubb.controller.MainController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <left>
+        <VBox spacing="15.0" style="-fx-background-color: #2c3e50; -fx-padding: 20;">
+            <Label text="Social Network" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <Separator />
+
+            <Label fx:id="lblWelcome" text="Welcome!" wrapText="true"
+                   style="-fx-text-fill: #ecf0f1; -fx-font-size: 14px; -fx-font-style: italic;"/>
+
+            <Separator />
+
+            <Button text="🦆 Ducks" onAction="#handleShowDucks" maxWidth="Infinity"/>
+            <Button text="👤 Persons" onAction="#handleShowPersons" maxWidth="Infinity"/>
+            <Button text="🤝 Communities" onAction="#handleShowCommunities" maxWidth="Infinity"/>
+            <Button text="🦅 Flocks" onAction="#handleShowFlocks" maxWidth="Infinity"/>
+            <Button text="🏁 Events" onAction="#handleShowEvents" maxWidth="Infinity"/>
+
+            <Separator />
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="🚪 Logout" onAction="#onLogout" maxWidth="Infinity" style="-fx-base: #c0392b;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: white;">
+            <Label text="Welcome to Duck Social Network!" textFill="#2c3e50">
+                <font>
+                    <Font name="Arial Bold" size="28.0"/>
+                </font>
+            </Label>
+
+            <Label text="Select an option from the left menu to start managing your network."
+                   textFill="#7f8c8d">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Label>
+        </VBox>
+    </center>
+
+</BorderPane>

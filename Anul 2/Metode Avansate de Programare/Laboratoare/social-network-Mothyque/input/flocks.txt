@@ -1,0 +1,6 @@
+1,SwimMasters,SWIMMING
+2,FlyHighers,FLYING
+3,DuckAdventurers,FLYING_AND_SWIMMING
+4,QuackSquad,FLYING
+5,WaterWaddlers,SWIMMING
+6,TheFeatheredFriends,FLYING_AND_SWIMMING

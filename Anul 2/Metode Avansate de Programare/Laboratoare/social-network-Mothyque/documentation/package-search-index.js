@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.ubb"},{"l":"com.ubb.domain"},{"l":"com.ubb.repository"},{"l":"com.ubb.service"},{"l":"com.ubb.ui"},{"l":"com.ubb.utils"},{"l":"com.ubb.validators"}];updateSearchResults();

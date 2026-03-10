@@ -1,0 +1,7 @@
+7,john_doe,john@example.com,1234,John,Doe,1998-05-14,Engineer,8
+8,anna_smith,anna@example.com,pass,Anna,Smith,1995-09-23,Doctor,9
+9,robert_j,robert@example.com,abcd,Robert,Johnson,1990-12-01,Teacher,7
+10,emily_b,emily@example.com,em1ly,Emily,Brown,2001-02-18,Designer,6
+11,michael_w,mike@example.com,mikepass,Michael,Williams,2003-11-30,Student,5
+12,Mothyque,mathyasacul@yahoo.com,Skibiditoilet,Acul,Mathyas,21.09.2005,Unemployed,10
+13,Mathyas,mathyas@gmail.com,SKibidi.99,Mathyas,Acul,21.09.2005,Somer,9
