@@ -25,13 +25,10 @@ public class Main extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        String url = "jdbc:postgresql://localhost:5432/college";
-        String username = "postgres";
-        String password = "mathy";
-
-        StudentRepository studentRepo = new StudentRepository(url, username, password);
-        ProfessorRepository professorRepo = new ProfessorRepository(url, username, password);
-        ClassRepository classRepo = new ClassRepository(url, username, password);
+        String url = "jdbc:sqlserver://localhost:1433;database=College;encrypt=true;trustServerCertificate=true;user=sa;password=admin;";
+        StudentRepository studentRepo = new StudentRepository(url);
+        ProfessorRepository professorRepo = new ProfessorRepository(url);
+        ClassRepository classRepo = new ClassRepository(url);
 
         Service<Integer, Student> studentService = new Service<>(studentRepo);
         Service<Integer, Professor> professorService = new Service<>(professorRepo);

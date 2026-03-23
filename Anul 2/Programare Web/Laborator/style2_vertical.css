@@ -1,0 +1,112 @@
+:root {
+    --culoare-fundal: #ecf0ec;
+    --culoare-sidebar: #ff5c00;
+    --culoare-hover: #808080;
+    --culoare-text-meniu: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--culoare-fundal);
+    font-family: 'Times New Roman', Times, serif;  
+    padding-left: 200px;
+}
+
+nav {
+    background-color: var(--culoare-sidebar);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    padding-top: 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--culoare-text-meniu);
+    font-size: 20px;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--culoare-text-meniu);
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--culoare-hover);
+    padding-left: 30px;
+}
+
+nav a::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-image: url("images/sprite.png");
+    background-repeat: no-repeat;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto; 
+    border-collapse: collapse; 
+    background-color: white;
+    color: black;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px; 
+    text-align: center;
+}
+
+th {
+    background-color: #d3d3d3;
+}
+
+nav ul li:nth-child(1) a::before {
+    background-position: 0 0;
+}
+
+nav ul li:nth-child(2) a::before {
+    background-position: -20px 0;
+}
+
+nav ul li:nth-child(3) a::before {
+    background-position: -40px 0;
+}
+
+nav ul li:nth-child(4) a::before {
+    background-position: -60px 0;
+}
+
+h1::before{
+    content: "🏀";
+}
+
+ul:not(.meniu_principal), ol{
+    padding-left: 40px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+ol  ul {
+    list-style-type: square;
+}
+h6 + ul {
+    list-style-type: circle;
+}

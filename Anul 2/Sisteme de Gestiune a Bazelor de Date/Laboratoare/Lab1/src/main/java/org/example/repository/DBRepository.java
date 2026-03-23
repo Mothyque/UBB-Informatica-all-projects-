@@ -19,17 +19,13 @@ import java.util.Optional;
 public abstract class DBRepository<ID, E extends Entity<ID>> implements Repository<ID, E>
 {
     private final String url;
-    private final String username;
-    private final String password;
 
     /**
      * Constructor pentru inițializarea parametrilor de conexiune la baza de date.
      */
-    public DBRepository(String url, String username, String password)
+    public DBRepository(String url)
     {
         this.url = url;
-        this.username = username;
-        this.password = password;
     }
 
     /**
@@ -39,7 +35,7 @@ public abstract class DBRepository<ID, E extends Entity<ID>> implements Reposito
      */
     protected Connection getConnection() throws SQLException
     {
-        return DriverManager.getConnection(url, username, password);
+        return DriverManager.getConnection(url);
     }
 
     /**

@@ -3,12 +3,31 @@
     <head> 
         <meta charset="UTF-8">
         <title> Admin Page</title>
+        <link rel="stylesheet" href="style1_horizontal.css">
     </head>
     <body>
+        <nav>
+            <ul class="meniu_principal">
+                <li>
+                    <a href="adminPage5.htm">Adaugă jucător</a>
+                </li>
+                <li>
+                    <a href="mainPage5.htm">Pagina principală</a>
+                </li>
+                <li>
+                    <a href="dashboard.htm"> Dashboard jucători</a>
+                </li>
+                <li>
+                    <a href="sprites.htm">Sponsori</a>
+                </li>
+            </ul>
+        </nav>
         <h1> PAGINĂ ADMIN</h1>
+        <br>
         <h2> Această pagină este dedicată strict adminilor pentru gestionarea jucătorilor </h2>
+        <br>
         <h3> Dacă nu sunteți un admin, vă rog să părăsiți pagina</h3>
-        <p> <a href="mainpage5.htm" title="Spre pagină principală">Go to Main Page</a> </p>
+        <br>   
         <p> <span> Notă informativă: </span> Vă rugăm să verificați datele <strong> de două ori </strong>înainte de a le salva. </p>
         <form name = "add_player" action="#" target = "_blank"> 
             <fieldset> 
@@ -96,7 +115,7 @@
                 <b>
                     Descriere:
                     <br>
-                    <textarea name = "Player Description" rows = "3" cols = "100"></textarea>
+                    <textarea name = "Player Description" rows = "3" cols = "50"></textarea>
                 </b>
                 <b>
                     Aptitudini:

@@ -1,0 +1,11 @@
+image_name,x,y,width,height
+bike02.jpg,15,91,364,233
+bike03.jpg,58,141,288,265
+bike04.jpg,4,3,410,411
+bike05.jpg,65,57,293,290
+bike06.jpg,64,144,281,263
+bike07.jpg,61,186,236,231
+bike08.jpg,53,4,332,353
+bike09.jpg,6,8,373,399
+bike1.jpg,8,25,400,383
+bike10.jpg,140,123,235,286

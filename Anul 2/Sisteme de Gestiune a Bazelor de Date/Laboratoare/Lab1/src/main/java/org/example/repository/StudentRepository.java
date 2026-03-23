@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public class StudentRepository extends DBRepository<Integer, Student>
 {
-    public StudentRepository(String url, String username, String password)
+    public StudentRepository(String url)
     {
-        super(url, username, password);
+        super(url);
     }
 
     @Override
