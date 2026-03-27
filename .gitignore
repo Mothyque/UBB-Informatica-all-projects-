@@ -50,6 +50,7 @@ env/
 *.war
 *.ear
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 
 # === Node.js / Web Development ===
 node_modules/
