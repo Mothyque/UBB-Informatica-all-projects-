@@ -1,0 +1,123 @@
+:root {
+    --culoare-meniu-principal: #f0925b;
+    --culoare-nav-bar: #ff5c00;
+    --culoare-hover: #808080;
+}
+body {
+    background-color: var(--culoare-meniu-principal);
+    font-family: 'Times New Roman', Times, serif;  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: var(--culoare-nav-bar);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav ul li{
+    display: flex;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--culoare-hover);
+}
+
+fieldset {
+    margin : 20px;
+    border: 2px var(--culoare-nav-bar) solid;
+    padding : 20px;
+    background-color: gray;
+    border-radius: 10px;
+    width: 300px;
+}
+
+input[type="text"], input[type="number"], textarea{
+    width: 70%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+input[type="text"], input[type="number"], textarea:focus {
+    border-color: var(--culoare-nav-bar);
+    outline: none;
+}
+
+@keyframes intrareFormular {
+    from {opacity : 0; transform: translateY(30px);}
+    to {opacity : 1; transform: translateY(0);}
+}
+
+form {
+    animation: intrareFormular 1s ease-out;
+}
+
+h1::before{
+    content: "🏀";
+}
+
+.sprite_sponsor ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sprite_sponsor li {
+    width: 100px;
+    height: 100px;
+    background-image: url("/images/sprite_sponsors.png");
+    background-repeat:no-repeat;
+    display: block;
+}
+
+.sprite_sponsor li:nth-child(1) {
+    background-position: 0 0;
+}
+
+.sprite_sponsor li:nth-child(2) {
+    background-position: -100px 0;
+}
+
+.sprite_sponsor li:nth-child(3) {
+    background-position: -200px 0;
+}
+
+.sprite_sponsor li:nth-child(4) {
+    background-position: -300px 0;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto; 
+    border-collapse: collapse; 
+    background-color: white;
+    color: black;
+}
+th, td { border: 1px solid black; padding: 10px; text-align: center; }
+th { background-color: #d3d3d3; }
