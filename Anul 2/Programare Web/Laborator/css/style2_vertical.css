@@ -110,3 +110,230 @@ ol  ul {
 h6 + ul {
     list-style-type: circle;
 }
+
+.echipa-lista ul{
+    display: none;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.echipa-lista.expandat ul{
+    display: block;
+}
+
+.echipa-lista strong{
+    cursor: pointer;
+    color: #ff5c00;
+}
+
+.echipa-lista strong::after {
+    content: "➕";
+    font-size: 0.8em;
+}
+
+.echipa-lista.expandat strong::after {
+    content: "➖";
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 3px solid #ff5c00;
+    border-radius: 15px;
+}
+
+.carousel-inner, .carousel-img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-img {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+
+#carousel-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 92, 0, 0.7);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev { left: 0; border-radius: 0 3px 3px 0; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#quiz-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px; 
+    z-index: 1000;
+    padding: 0;
+    background: none;
+}
+
+.quiz-container {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 3px solid #ff5c00;
+    position: relative;
+}
+
+.quiz-container h3 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.quiz-matchup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fdf2ec;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.team {
+    flex: 1;
+    text-align: center;
+}
+
+.team img {
+    width: 45px !important; 
+    height: 45px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.team span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+}
+
+.vs {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff5c00;
+    padding: 0 5px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.quiz-btn {
+    padding: 8px 5px;
+    font-size: 0.85rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.quiz-btn:hover:not(:disabled) {
+    border-color: #ff5c00;
+    background-color: #fff5f0;
+}
+
+.correct {
+    background-color: #2ecc71 !important;
+    color: white;
+    border-color: #27ae60 !important;
+}
+
+.wrong {
+    background-color: #e74c3c !important;
+    color: white;
+    border-color: #c0392b !important;
+}
+
+#quiz-feedback p {
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+#quiz-hide-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #ff5c00;
+    font-weight: bold;
+}
+
+#quiz-show-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ff5c00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-weight: bold;
+    z-index: 10000;
+}
+
+th[onclick] {
+    cursor: pointer;
+    user-select: none;
+}
+
+th[onclick]:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 15px;
+    width: 50%;
+}
