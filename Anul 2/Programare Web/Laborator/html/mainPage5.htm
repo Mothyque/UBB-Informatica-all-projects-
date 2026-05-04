@@ -33,8 +33,8 @@
                     </div>
                 </a>
             </div>
-            <button class="prev" onclick="manualChange(-1)">&#10094;</button>
-            <button class="next" onclick="manualChange(1)">&#10095;</button>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
 
         <h4> Tabel clasament:</h4>
@@ -42,11 +42,11 @@
             <table id="standingsTable">
                 <thead>
                     <tr>
-                        <th onclick="sortTable(0)" style="cursor:pointer">Poziție ↕</th>
-                        <th onclick="sortTable(1)" style="cursor:pointer">Nume Echipa ↕</th>
+                        <th data-key="pozitie" style="cursor:pointer">Poziție ↕</th>
+                        <th data-key="nume" style="cursor:pointer">Nume Echipa ↕</th>
                         <th>Sigla</th>
-                        <th onclick="sortTable(3)" style="cursor:pointer">Victorii ↕</th>
-                        <th onclick="sortTable(4)" style="cursor:pointer">Înfrângeri ↕</th>
+                        <th data-key="victorii" style="cursor:pointer">Victorii ↕</th>
+                        <th data-key="infrangeri" style="cursor:pointer">Înfrângeri ↕</th>
                     </tr>
                 </thead>
                 <tbody id="standingsBody">
@@ -58,10 +58,10 @@
                 <h3> Clasament Vertical </h3>
                 <table id="verticalStandingsTable">
                     <tr id="row-nume">
-                        <th onclick="sortVerticalTable(0)">Echipa (Sortează)</th>
+                        <th data-key="nume" style="cursor:pointer">Nume echipa (Sortează)</th>
                         </tr>
                     <tr id="row-victorii">
-                        <th onclick="sortVerticalTable(1)">Victorii (Sortează)</th>
+                        <th data-key="victorii" style="cursor:pointer">Victorii (Sortează)</th>
                         </tr>
                 </table>
             </section>
@@ -191,6 +191,7 @@
             </div>
         </section>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="/js/data.js"></script>
         <script src="/js/forms.js"></script>
     </body>
