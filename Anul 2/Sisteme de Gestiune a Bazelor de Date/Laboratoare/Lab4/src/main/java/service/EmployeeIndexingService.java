@@ -16,32 +16,6 @@ public class EmployeeIndexingService
     @PersistenceContext
     private EntityManager em;
 
-    @Transactional
-    public void seedLargeDataset()
-    {
-        List<Department> depts = em.createQuery("select d from Department d", Department.class).getResultList();
-        if (depts.isEmpty())
-        {
-            return;
-        }
-        Random rand = new Random();
-        for (int i = 0; i < 1000000; i++)
-        {
-            Employee e = new Employee();
-            e.setName("Employee " + i);
-            e.setEmail("employee" + i + "@example.com");
-            e.setSalary(50000 + (rand.nextInt(30000)));
-            e.setDepartment(depts.get(rand.nextInt(depts.size())));
-            em.persist(e);
-
-            if (i % 10000 == 0)
-            {
-                em.flush();
-                em.clear();
-            }
-        }
-    }
-
     public void runBenchmarks()
     {
         benchmark("Search by Email", "SELECT e FROM Employee e WHERE e.email = 'employee9999@example.com'");
@@ -53,7 +27,7 @@ public class EmployeeIndexingService
     private void benchmark(String label, String query)
     {
         long totalTime = 0;
-        int iterations = 100;
+        int iterations = 10;
 
         for(int i = 0; i < iterations; i++)
         {

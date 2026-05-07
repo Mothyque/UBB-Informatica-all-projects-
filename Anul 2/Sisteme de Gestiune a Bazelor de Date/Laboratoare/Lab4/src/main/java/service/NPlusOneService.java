@@ -25,12 +25,12 @@ public class NPlusOneService
             Department department = new Department();
             department.setName("Department " + i);
             em.persist(department);
-            for (int j = 1; j <= 3; j++)
+            for (int j = 1; j <= 3000; j++)
             {
                 Employee e = new Employee();
                 e.setName("Employee " + i);
                 e.setEmail("employee" + i + "@example.com");
-                e.setSalary(50000 + (30000 * rand.nextInt()));
+                e.setSalary(50000 + (rand.nextInt(30000)));
                 e.setDepartment(department);
                 em.persist(e);
             }
