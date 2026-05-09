@@ -1,3 +1,0 @@
-1;Ion Popescu;Str. Primaverii 10;0722111222;Asus ROG Strix;2024-03-10;Laptopul se supraincalzeste;New
-2;Maria Ionescu;Bd. Unirii 45;0733444555;MacBook Air M1;2024-03-12;S-a varsat cafea pe tastatura;Finished
-3;Andrei Vasile;Str. Lunga 2;0744999888;Dell Inspiron 15;2024-03-14;Ecranul palpaie la pornire;New
