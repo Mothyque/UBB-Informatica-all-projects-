@@ -112,6 +112,51 @@ h1::before{
     background-position: -300px 0;
 }
 
+.forms-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.add-player-dashboard-form {
+    border: 2px var(--culoare-nav-bar) solid;
+    padding: 20px;
+    background-color: gray;
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+    margin-top: 0;
+    animation: intrareFormular 1s ease-out;
+}
+
+legend {
+    position: relative;
+    left: -5px;
+    margin-bottom: 15px;
+    padding: 0 8px;
+    color: black;
+    font-weight: bold;
+}
+
+.add-player-dashboard-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.add-player-dashboard-form input,
+.add-player-dashboard-form select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+
 table {
     width: 90%;
     margin: 20px auto; 

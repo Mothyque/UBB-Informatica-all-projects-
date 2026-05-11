@@ -99,3 +99,20 @@ th, td {
     }
 }
 
+.remember-me-container {
+    display: flex;
+    align-items: center; 
+    gap: 8px;          
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.remember-me-container input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.captcha-container label {
+    display: block;
+    margin-bottom: 5px;
+}

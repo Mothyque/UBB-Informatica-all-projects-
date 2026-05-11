@@ -9,13 +9,13 @@
         <nav>
             <ul class="meniu_principal">
                 <li>
-                    <a href="adminPage5.htm">Adaugă jucător</a>
+                    <a href="adminPage5.php">Admin Panel</a>
                 </li>
                 <li>
-                    <a href="mainPage5.htm">Pagina principală</a>
+                    <a href="mainPage5.php">Pagina principală</a>
                 </li>
                 <li>
-                    <a href="dashboard.htm"> Dashboard jucători</a>
+                    <a href="dashboard.php"> Dashboard jucători</a>
                 </li>
                 <li>
                     <a href="sprites.htm">Sponsori</a>
@@ -34,28 +34,28 @@
         <br>
         <div class="dashboard-grid">
             <div class="card">
-                <img src="/images/mike_james.png" alt="Mike James" width="150" height="150">
+                <img src="/images/players/mike_james.png" alt="Mike James" width="150" height="150">
                 <h4> Mike James </h4>
                 <p> Echipă: AS Monaco </p>
                 <p> Poziție: PG </p>
                 <p> Înălțime: 190 cm </p>
             </div>
             <div class="card">
-                <img src="/images/vasilije_micic.png" alt="Vasilije Micic" width="150" height="150">
+                <img src="/images/players/vasilije_micic.png" alt="Vasilije Micic" width="150" height="150">
                 <h4> Vasilije Micić </h4>
                 <p> Echipă: Anadolu Efes Istanbul </p>
                 <p> Poziție: PG </p>
                 <p> Înălțime: 193 cm </p>
             </div>
             <div class="card">
-                <img src = "/images/shane_larkin.png" alt="Shane Larkin" width="150" height="150">
+                <img src = "/images/players/shane_larkin.png" alt="Shane Larkin" width="150" height="150">
                 <h4> Shane Larkin </h4>
                 <p> Echipă: Anadolu Efes Istanbul </p>
                 <p> Poziție: PG </p>
                 <p> Înălțime: 182 cm </p>
             </div>
             <div class="card">
-                <img src="/images/milos_teodosic.png" alt="Milos Teodosic" width="150" height="150">
+                <img src="/images/players/milos_teodosic.png" alt="Milos Teodosic" width="150" height="150">
                 <h4> Milos Teodosic </h4>
                 <p> Echipă: Virtus Bologna </p>
                 <p> Poziție: PG </p>
