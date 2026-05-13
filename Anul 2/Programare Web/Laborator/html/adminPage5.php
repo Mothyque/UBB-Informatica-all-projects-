@@ -11,9 +11,13 @@ try {
 
     $posQuery = $pdo->query("SELECT DISTINCT position FROM players WHERE position IS NOT NULL AND position != ''");
     $existingPositions = $posQuery->fetchAll(PDO::FETCH_COLUMN);
+
+    $playerQuery = $pdo->query("SELECT name FROM players");
+    $existingPlayers = $playerQuery->fetchAll(PDO::FETCH_COLUMN);
 } catch (PDOException $e) {
     $existingTeams = [];
     $existingPositions = [];
+    $existingPlayers = [];
 }
 ?>
 
@@ -185,10 +189,29 @@ try {
                 <label>Înălțime (cm):</label>
                 <input type="number" name="height">
 
-                <label>Fotografie Jucător (Încarcă PNG/JPG):</label>
+                <label>Fotografie Jucător:</label>
                 <input type="file" name="player_image" accept="image/*" required>
 
                 <button type="submit" name="add_player">Salvează Jucător</button>
+            </form>
+        </div>
+
+        <div class="delete-player-dashboard-form">
+            <form action="../php/delete_player.php" method="POST">
+                <fieldset>
+                    <legend>Șterge Jucător</legend>
+                    
+                    <label><b>Selectează Nume:</b></label>
+                    <input type="text" name="player_name" list="players_to_delete" required placeholder="Caută jucător...">
+                    <datalist id="players_to_delete">
+                        <?php foreach ($existingPlayers as $pName): ?>
+                            <option value="<?php echo htmlspecialchars($pName); ?>">
+                        <?php endforeach; ?>
+                    </datalist>
+
+                    <br><br>
+                    <input type="submit" name="delete_player" value="Șterge" class="btn-delete">
+                </fieldset>
             </form>
         </div>
     </div>

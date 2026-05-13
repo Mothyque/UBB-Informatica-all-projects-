@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="checkbox" name="remember" id="remember">
             </div>
             <div class="captcha-container">
-                <label>Security: <strong><?php echo $_SESSION['captcha_text']; ?></strong></label>
+                <label>CAPTCHA: <strong><?php echo $_SESSION['captcha_text']; ?></strong></label>
                 <input type="number" name="captcha_response" required>
             </div>
             <button type="submit">Log In</button>

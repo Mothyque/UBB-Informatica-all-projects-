@@ -1,3 +1,14 @@
+<?php
+session_start();
+require_once '../php/db_pdo.php';
+
+try {
+    $stmt = $pdo->query("SELECT * FROM players ORDER BY id DESC");
+    $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    $players = [];
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,37 +41,27 @@
         </nav>
         <h1> DASHBOARD JUCĂTORI </h1>
         <br>
-        <h2> Această pagină este dedicată tuturor utilizatorilor pentru a vizualiza jucătorii din Euroleague </h2>
+        <h2> Această pagină vizualizează dinamic jucătorii din baza de date </h2>
         <br>
+        
         <div class="dashboard-grid">
-            <div class="card">
-                <img src="/images/players/mike_james.png" alt="Mike James" width="150" height="150">
-                <h4> Mike James </h4>
-                <p> Echipă: AS Monaco </p>
-                <p> Poziție: PG </p>
-                <p> Înălțime: 190 cm </p>
-            </div>
-            <div class="card">
-                <img src="/images/players/vasilije_micic.png" alt="Vasilije Micic" width="150" height="150">
-                <h4> Vasilije Micić </h4>
-                <p> Echipă: Anadolu Efes Istanbul </p>
-                <p> Poziție: PG </p>
-                <p> Înălțime: 193 cm </p>
-            </div>
-            <div class="card">
-                <img src = "/images/players/shane_larkin.png" alt="Shane Larkin" width="150" height="150">
-                <h4> Shane Larkin </h4>
-                <p> Echipă: Anadolu Efes Istanbul </p>
-                <p> Poziție: PG </p>
-                <p> Înălțime: 182 cm </p>
-            </div>
-            <div class="card">
-                <img src="/images/players/milos_teodosic.png" alt="Milos Teodosic" width="150" height="150">
-                <h4> Milos Teodosic </h4>
-                <p> Echipă: Virtus Bologna </p>
-                <p> Poziție: PG </p>
-                <p> Înălțime: 196 cm </p>
-            </div>
+            <?php if (count($players) > 0): ?>
+                <?php foreach ($players as $row): ?>
+                    <div class="card">
+                        <img src="/images/players/<?php echo htmlspecialchars($row['image_link']); ?>" 
+                             alt="<?php echo htmlspecialchars($row['name']); ?>" 
+                             width="150" height="150" 
+                             style="object-fit: cover; border-radius: 5px;">
+                        
+                        <h4> <?php echo htmlspecialchars($row['name']); ?> </h4>
+                        <p> <strong>Echipă:</strong> <?php echo htmlspecialchars($row['team']); ?> </p>
+                        <p> <strong>Poziție:</strong> <?php echo htmlspecialchars($row['position']); ?> </p>
+                        <p> <strong>Înălțime:</strong> <?php echo htmlspecialchars($row['height']); ?> cm </p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Momentan nu există jucători în baza de date.</p>
+            <?php endif; ?>
         </div>
     </body>
 </html>

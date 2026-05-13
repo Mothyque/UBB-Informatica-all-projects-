@@ -156,6 +156,18 @@ legend {
     border-radius: 4px;
 }
 
+.delete-player-dashboard-form {
+    width: 340px;
+    animation: intrareFormular 1s ease-out;
+}
+
+.add-player-dashboard-form label, 
+.delete-player-dashboard-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
 
 table {
     width: 90%;
