@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="20260513-taskC-1" author="student">
+        <createTable tableName="projects">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="start_date" type="DATE"/>
+            <column name="department_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="fk_project_dept"
+                             referencedTableName="department"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20260513-taskC-dept-data" author="student">
+        <insert tableName="department">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Internal Projects Dept"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="20260513-taskC-2" author="student">
+        <insert tableName="projects">
+            <column name="name" value="Project Alpha"/>
+            <column name="description" value="Initial research phase"/>
+            <column name="start_date" valueComputed="CURRENT_DATE"/>
+            <column name="department_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

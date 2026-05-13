@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="20260513-initial-1" author="student">
+        <createTable tableName="department">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20260513-initial-2" author="student">
+        <createTable tableName="employee">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="salary" type="INTEGER"/>
+            <column name="department_id" type="BIGINT">
+                <constraints foreignKeyName="fk_employee_dept"
+                             referencedTableName="department"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20260513-initial-3" author="student">
+        <createIndex indexName="idx_employee_email" tableName="employee">
+            <column name="email"/>
+        </createIndex>
+        <createIndex indexName="idx_employee_salary" tableName="employee">
+            <column name="salary"/>
+        </createIndex>
+        <createIndex indexName="idx_employee_dept" tableName="employee">
+            <column name="department_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
