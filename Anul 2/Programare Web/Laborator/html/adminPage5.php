@@ -197,10 +197,15 @@ try {
         </div>
 
         <div class="delete-player-dashboard-form">
+            <?php
+                if (empty($_SESSION['csrf_token'])) {
+                    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                }
+            ?>
             <form action="../php/delete_player.php" method="POST">
                 <fieldset>
                     <legend>Șterge Jucător</legend>
-                    
+
                     <label><b>Selectează Nume:</b></label>
                     <input type="text" name="player_name" list="players_to_delete" required placeholder="Caută jucător...">
                     <datalist id="players_to_delete">
@@ -208,7 +213,8 @@ try {
                             <option value="<?php echo htmlspecialchars($pName); ?>">
                         <?php endforeach; ?>
                     </datalist>
-
+                            
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                     <br><br>
                     <input type="submit" name="delete_player" value="Șterge" class="btn-delete">
                 </fieldset>

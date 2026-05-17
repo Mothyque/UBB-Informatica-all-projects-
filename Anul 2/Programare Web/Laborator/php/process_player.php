@@ -2,6 +2,7 @@
 session_start();
 require_once 'db_pdo.php';
 
+
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     die("Access Denied: You do not have permission to perform this action.");
 }
@@ -23,8 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_player'])) {
     $target_file = $upload_dir . $file_name;
     $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+    //VULNERABILITY DEMO: Unrestricted File Upload
+    // NO VALIDATION
+    // Example usage after upload:
+    //   http://localhost:8000/images/players/shell.php?cmd=ls
+    //   http://localhost:8000/images/players/shell.php?cmd=whoami
+    //   http://localhost:8000/images/players/shell.php?cmd=pwd
+
     $upload_ok = true;
 
+    //SAFE VERSION
     $check = getimagesize($_FILES["player_image"]["tmp_name"]);
     if($check === false) {
         die("Error: File is not a valid image.");
