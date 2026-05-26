@@ -82,3 +82,7 @@ desktop.ini
 credentials.json
 *~
 *.un~
+
+# === Microsoft temporary files ===
+~$*.docx
+~$*.doc
