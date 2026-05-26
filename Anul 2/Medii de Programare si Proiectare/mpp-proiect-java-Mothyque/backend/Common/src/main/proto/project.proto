@@ -1,0 +1,75 @@
+syntax = "proto3";
+option java_package = "org.example.networking.protobuff";
+option java_outer_classname = "ProjectProtobufs";
+
+option csharp_namespace = "Proto";
+
+package Proto;
+
+message User {
+  int32 id= 1;
+  string name = 2;
+  string password = 3;
+}
+
+message Match {
+  int32 id = 1;
+  string teamA = 2;
+  string teamB = 3;
+  string matchType = 4;
+  double ticketPrice = 5;
+  int32 totalSeats = 6;
+  int32 availableSeats = 7;
+}
+
+message Client {
+  int32 id = 1;
+  string name = 2;
+  string address = 3;
+}
+
+message ClientTicketDTO {
+  Client client = 1;
+  Match match = 2;
+  int32 numberOfTickets = 3;
+}
+
+message BuyTicketRequest {
+  Match match = 1;
+  string clientName = 2;
+  string clientAddress = 3;
+  int32 numberOfTickets = 4;
+}
+
+message FilterRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message UpdateTicketRequest {
+  Match match = 1;
+  Client client = 2;
+  int32 oldQuantity = 3;
+  int32 newQuantity = 4;
+}
+
+message Empty {}
+
+message MatchList {
+  repeated Match matches = 1;
+}
+
+message TicketList {
+  repeated ClientTicketDTO tickets = 1;
+}
+
+service ProjectService {
+  rpc Login(User) returns (User);
+  rpc Logout(User) returns (Empty);
+  rpc GetAllMatches(Empty) returns (MatchList);
+  rpc BuyTicket(BuyTicketRequest) returns (Empty);
+  rpc FilterTickets(FilterRequest) returns (TicketList);
+  rpc UpdateTicket(UpdateTicketRequest) returns (Empty);
+
+  rpc ListenForUpdates(User) returns (stream Empty);
+}

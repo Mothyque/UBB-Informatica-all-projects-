@@ -1,0 +1,17 @@
+﻿<local:MessageController x:Class="ProiectMPP.Client.ViewModels.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ProiectMPP.Client.ViewModels"
+        Title="Login" Height="400" Width="600"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Canvas Background="White">
+        <Label Content="LOGIN" Canvas.Left="244" Canvas.Top="116" FontSize="36" />
+        <Label Content="Username:" Canvas.Left="121" Canvas.Top="192" />
+        <TextBox x:Name="txtUsername" Canvas.Left="215" Canvas.Top="188" Width="150" Height="25" />
+        <Label Content="Password:" Canvas.Left="121" Canvas.Top="229" />
+        <PasswordBox x:Name="txtPassword" Canvas.Left="215" Canvas.Top="225" Width="150" Height="25" />
+        <Button x:Name="btnLogin" Content="Login" Canvas.Left="326" Canvas.Top="284" Width="75" Height="30" Click="btnLogin_Click" />
+    </Canvas>
+</local:MessageController>

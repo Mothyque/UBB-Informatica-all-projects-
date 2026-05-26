@@ -35,28 +35,7 @@ try {
         <link rel="stylesheet" href="/css/style3_responsive.css">
     </head>
     <body>
-        <nav>
-            <ul class="meniu_principal">
-                <li>
-                    <a href="adminPage5.php">Admin Panel</a>
-                </li>
-                <li>
-                    <a href="mainPage5.php">Pagina principală</a>
-                </li>
-                <li>
-                    <a href="dashboard.php"> Dashboard jucători</a>
-                </li>
-                <li>
-                    <a href="sprites.htm">Sponsori</a>
-                </li>
-                <li>
-                    <a href="tickets.htm">Bilete Meci</a>
-                </li>
-                <li>
-                    <a href="contact.htm">Contact Scouting</a>
-                </li>
-            </ul>
-        </nav>
+        <?php include __DIR__ . '/_nav.html'; ?>
         <h1> DASHBOARD JUCĂTORI </h1>
         <br>
         <h2> Această pagină vizualizează dinamic jucătorii din baza de date </h2>

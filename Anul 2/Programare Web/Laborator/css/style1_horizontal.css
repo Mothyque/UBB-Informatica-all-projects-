@@ -178,3 +178,29 @@ table {
 }
 th, td { border: 1px solid black; padding: 10px; text-align: center; }
 th { background-color: #d3d3d3; }
+
+.error-message {
+                display: none;
+                color: #D8000C;
+                background-color: #FFBABA;
+                padding: 15px;
+                border: 1px solid #D8000C;
+                border-radius: 5px;
+                margin: 10px auto;
+                width: 80%;
+                text-align: center;
+                font-weight: bold;
+            }
+            .pagination {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .pagination button {
+                padding: 8px 15px;
+                margin: 0 10px;
+                cursor: pointer;
+            }
+            .pagination button:disabled {
+                cursor: not-allowed;
+                opacity: 0.5;
+            }

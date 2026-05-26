@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProiectMPP.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "rest"
+    }
+  }
+}

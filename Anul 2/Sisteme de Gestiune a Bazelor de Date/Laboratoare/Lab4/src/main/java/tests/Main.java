@@ -46,7 +46,7 @@ public class Main
 //            runCacheDemo(cacheDemoService);
 //            runBulkUpdateDemo(bulkUpdateDemoService);
 //            runStatementReuseDemo(statementReuseService);
-//            Application.launch(EmployeeController.class, args);
+            Application.launch(EmployeeController.class, args);
         }
         catch (Exception e)
         {

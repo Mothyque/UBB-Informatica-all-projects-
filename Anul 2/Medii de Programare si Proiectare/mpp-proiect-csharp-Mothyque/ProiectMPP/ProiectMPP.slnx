@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ProiectMPP.Common/ProiectMPP.Common.csproj" Id="988eec52-fb19-44c1-9f51-370669f38860" />
+  <Project Path="ProiectMPP.Gui/ProiectMPP.Client.csproj" Id="d311b932-96e2-40c3-a6f5-d227eb57f637" />
+  <Project Path="ProiectMPP.Server/ProiectMPP.Server.csproj" Id="f4dabf5a-5d12-4c0e-967f-0b96f13f7cb6" />
+</Solution>

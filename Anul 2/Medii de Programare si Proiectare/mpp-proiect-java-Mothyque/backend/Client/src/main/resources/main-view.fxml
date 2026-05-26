@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1352.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
+   <children>
+      <Label layoutX="669.0" layoutY="14.0" text="Main Menu">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblMatches" layoutX="10.0" layoutY="447.0" prefHeight="200.0" prefWidth="976.0" />
+      <TextField fx:id="txtName" layoutX="1152.0" layoutY="296.0" />
+      <Button fx:id="btnSearch" layoutX="1260.0" layoutY="361.0" mnemonicParsing="false" onAction="#onSearch" text="Search" />
+      <Label layoutX="1056.0" layoutY="300.0" text="Name:" />
+      <TableView fx:id="tblTickets" layoutX="9.0" layoutY="77.0" prefHeight="200.0" prefWidth="1334.0" />
+      <Label layoutX="1056.0" layoutY="330.0" text="Address:" />
+      <TextField fx:id="txtAddress" layoutX="1152.0" layoutY="326.0" />
+      <Button fx:id="btnUpdate" layoutX="1259.0" layoutY="449.0" mnemonicParsing="false" onAction="#onUpdate" text="Update" />
+      <TextField fx:id="txtTicket" layoutX="1152.0" layoutY="415.0" />
+      <Label layoutX="996.0" layoutY="419.0" text="Number of tickets:" />
+      <Button fx:id="btnLogout" layoutX="1091.0" layoutY="581.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="66.0" prefWidth="197.0" text="Logout" />
+      <Button fx:id="btnBuy" layoutX="1195.0" layoutY="449.0" mnemonicParsing="false" onAction="#onBuy" text="Buy" />
+   </children>
+</AnchorPane>

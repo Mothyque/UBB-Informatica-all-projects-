@@ -20,17 +20,7 @@ if (!isset($_SESSION['user_id'])) {
         <br>
         <h3> Dacă sunteți un admin, vă rog să accesați pagina de admin pentru a adăuga sau șterge jucători</h3>
         <br>
-        <nav>
-            <ul class="meniu_principal">
-                <li><a href="adminPage5.php">Admin Panel</a></li>
-                <li><a href="mainPage5.php">Pagina principală</a></li>
-                <li><a href="dashboard.php"> Dashboard jucători</a></li>
-                <li><a href="sprites.htm">Sponsori</a></li>
-                <li><a href="tickets.htm">Bilete Meci</a></li>
-                <li><a href="contact.htm">Contact Scouting</a></li>
-                <li class="logout-button"><a href="../php/logout.php">Logout</a></li>
-            </ul>
-        </nav>
+        <?php include __DIR__ . '/_nav.html'; ?>
 
         <div class="carousel-container">
             <div id="carousel-slide" class="carousel-inner">
