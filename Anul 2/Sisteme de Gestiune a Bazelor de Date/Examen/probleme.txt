@@ -1,0 +1,59 @@
+- Fie urmatorul log al unei baze de date:
+<start_transaction, T1>;
+<T1, A, 50, 20>;
+<start_transaction, T2>;
+<T2, B, 250, 20>;
+<T1, A, 40, 50>;
+<T2, C, 35, 20>;
+<T2, D, 45, 20>;
+<commit, T1>;
+<start_transaction, T3>;
+<T3, E, 55, 20>;
+<T2, D, 50, 45>;
+<T2, C, 65, 35>;
+<commit, T2>;
+<start_transaction, T4>;
+<T4, F, 100, 20>;
+<T4, G, 110, 20>;
+<commt, T3>;
+<checkpoint>
+<T4, F, 150, 100>;
+<commit T4>;
+<T5, D, 40, 300>;
+<commit T5>;
+<T6, E, 49, 140>;
+<commit T6>;
+
+Presupunand ca o intrare in log are forma <XID, Obiect, ValoareNoua, ValoareVeche>, care vor fi valorile obiectelor A, B, C, D, E, F si G salvate pe disc dupa efectuarea procesului de recuperare a datelor:
+a) daca sistemul este intrerupt chiar inainte de a scrie <start_transaction T4> in log?
+b) daca sistemul este intrerupt chiar inainte de a salva in log <commit T4>?
+
+- Se dau schemele relationale:
+Clienti [CNP, Nume, Prenume], {CNP} este cheie primara
+Produse [CodProdus, DenumireProdus], {CodProdus} este cheie primara si {DenumireProdus} este cheie secundara
+Achizitii [CNP, CodProdus], {CNP, CodProdus} este cheie primara, {CNP} este cheie externa pentru {CNP} din Clienti, {CodProdus} este cheie externa pentru {CodProdus} din Produse
+
+Care dintre interogarile de mai jos returneaza strict numele si prenumele clientilor care au cumparat un produs cu denumirea 'DEN' (duplicatele nu se elimina din rezultat)?
+a) SELECT C.Nume, C.Prenume FROM Produse P LEFT JOIN
+Achizitii A on P.CodProdus = A.CodProdus AND P.DenumireProdus = 'DEN' RIGHT JOIN CLIENTI C on A.CNP = C.CNP;
+
+b) SELECT C.Nume, C.Prenume FROM Produse P INNER JOIN
+Achiztii A on P.CodProdus = A.CodProdus INNER JOIN ClIENTI C on A.CNP = C.CNP WHERE P.DenumireProdus = 'DEN';
+
+c) Proiectie(nume, prenume) (((Selectie DenumireProdus = 'DEN' Produse) JOIN Produse.CodProdus=Achiztii.CodProdus Achizitii) JOIN Clienti.CNP=Achizitii.CNP Clienti);
+
+d) Proiectie(nume, prenume) (((Selectie DenumireProdus = 'DEN' Produse) JOIN Produse.CodProdus=Achiztii.CodProdus Achizitii) JOIN Clienti.CNP=Achizitii.CNP Clienti);
+
+e) Niciuna de mai sus
+
+- Aveti tabelele:
+Customers(customer_id, name, country)
+Orders(order_id, customer_id, order_date, total_amount)
+OrderItems(order_item, order_id, product_id, quantity, unit_price)
+Products(product_id, product_name, category)
+
+Scrieti o interogare care returneaza pentru fiecare client din Germania, suma totala cheltuita pe produse din categoria 'Electronics' in ultimii 2 ani, impreuna cu numarul de comenzi distincte efectuate. Coloanele din rezultat ar trebui sa fie:
+
+customer_id | name | total_spent | order_count
+
+- Mentionati cand este nevoie sa se optimizeze un query

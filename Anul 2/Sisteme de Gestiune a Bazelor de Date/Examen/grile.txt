@@ -1,0 +1,209 @@
+- Care dintre urmataorele atribute nu reprezinta o stare valida a unei tranzactii?
+a) Active
+b) Committed
+c) Suspended
+d) Aborted
+
+- Care dintre urmatoarele afirmatii descrie cel mai fidel proprietatea de izolare a tranzactiilor?
+a) Odata ce tranzactia s-a comis, modificarile facute trebuie sa persiste in baza de date chiar daca sistemul esueaza.
+b) Toate actiunile tranzactiei se executa sau nu se executa nici una.
+c) O transactie se poate executa independent fara a lua in considerare efectele secundare ce le-ar putea avea asupra altor tranzactii aflate in executie
+d) O tranzactie lasa baza de date intr-o stare consistenta daca baza de date se afla intr-o stare consistenta inainte de inceperea executarii tranzactiei
+
+- La ce se refera anomalia de executie concurenta Phantom Read?
+a) La doua citiri consecutive ale aceluiasi obiect se obtin valori diferite
+b) La doua selectii consecutive, numarul inregistrarilor returnate difera
+c) La doua modificari consecutive ale aceluiasi obiect se pastreaza prima valoare asignata
+d) La a doua citire a unui obiect se arunca o exceptie
+
+- Ce se intampla la un checkpoint
+a) Este un graf de asteptare pentru a verifica daca mai multe tranzactii au intrat intr-un deadlock
+b) Se parcurge logul bazei de date pentru a determina daca este necesara pornirea procesului de recuperare a datelor
+c) Se deblocheaza toate obiectele blocate in mod partajat sau exclusiv de tranzactiile curente.
+d) Executia tuturor tranzactiilor active este oprita temporar pentru a se salva paginilie modificate din memoria interna
+
+- Care dintre urmatoarele perechi de proprietati ale unei tranzactii e garantata prin actiunile de recuperare a datleor?
+a) Consistenta si Integritatea
+b) Durabilitate si Atomicitatea
+c) Concurenta si Izolarea
+d) Completitudinea si Disjunctivitatea
+
+- Care este nivelor de izolare implicit in MS SQL Server?
+a) Read uncommited
+b) Read commited
+c) Repeatable reads
+d) Serializable
+
+- Care dintre urmatoarele afirmatii nu se refera la replicarea asincrona cu site principal
+a) Orice modificare efectuata pe o copie master este propagata imediat copiilor secundare, dupa care se continua activitatea
+b) Dintre toate copiile, una singura eset copia master, si aceasta este publicata
+c) Copiile secundare nu vor putea fi modificate direct de catre o tranzactie
+d) Copiile care nu sunt primare se leaga de copiile primare printr-un procedeu de subscriere
+
+- Care dintre urmataorele afirmatii despre planificarea de mai jos este adevarata
+T1            T2          T3
+             		Read(D)
+Write(A)   
+            Read(B)
+Write(B)
+	    Read(D)
+			Write(D)
+
+a) este seriala
+b) este serializabila
+c) nu poate fi generata daca se urmeaza un protocol de blocare 2pl
+d) poate fi generata daca se urmeaza un protocol de blocare 2pl strict
+
+- Ce inseamna o fragmentare orizontala derivata a datelor
+a) Este fragmentarea ce se aplica dupa ce tabela a mai fost fragmentata o data
+b) Sunt fragmente ce nu contin cheia primara a tabelei fragmentate
+c) Fragmentarea se face pe baza legaturilor spre fragmente ale altor tabele
+d) TOate fragmentele includ un set fix de inregistrari numit set derivat
+
+
+- Fie tranzatiile T1,T2,T3 si planificarile S1, S2 detaliate astfel:
+T1: r1(X);r1(Z);w1(X);w1(Z)
+T2: r2(Y);r2(Z);w2(Z)
+T3: r3(Y);r3(X);w3(Y)
+
+S1: r1(X);r3(Y);r3(X);r2(Y);r2(Z);w3(Y);w2(Z);r1(Z);w1(X);w1(Z)
+S2: r1(X);r3(Y);r2(Y);r3(X);r1(Z);r2(Z);w3(Y);w1(X);w2(Z);w1(Z)
+
+Care dintre urmataorele afirmatii este adevarata?
+a) S1 si S2 sunt conflict-serializabile
+b) Doar S1 este conflict serializabil
+c) Doar S2 este conflict serializabil
+d) Nici una dintre planificari nu este conflict serializabila
+
+- Fie o baza de date cu o tabela R si utilizatorii Alice, Bob, Carol, Dave. Alice este proprietarul tabelei R. Este executate urmatoare secventa de comenzi:
+
+Alice: GRANT SELECT ON R TO Bob WITH GRANT OPTION
+Alice: GRANT SELECT ON R TO Carol WITH GRANT OPTION
+Carol: GRANT SELECT ON R TO Bob WITH GRANT OPTION
+Bob: GRANT SELECT ON R TO Dave WITH GRANT OPTION
+Carol: GRANT SELECT ON R to Dave
+Dave: GRANT SELECT ON R TO Carol WITH GRANT OPTION
+ALICE: REVOKE SELECT ON R from Bob CASCADE
+
+Care dintre urmatoarele afirmatii este adevarata dupa executia acestor comenzi
+a) Dave ar privilegiul SELECT pe R, dar fara optiune de GRANT
+b) Dave nu are privilegiul de select pe R.
+c) Daca are privilegiul de SELECT pe R cu optiune de GRANT
+d) Dave are optiune de GRANT pentru SELECT pe R, fara insa ca el sa detina privilegiul pe aceasta operatie
+
+- Stocarea de copii distincte ale unei baze de date in mai multe locatii poarta numele de:
+a) Fragmentare orizontala
+b) Fragmentare verticala
+c) Replicarea datelor
+d) Distribuirea datelor
+
+- Care este principalul avantaj al utilizarii pipeline-ului in procesul de optimizare a interogarilor?
+a) Restrictioneaza spatiul de cautare a planurilor de executie
+b) Faciliteaza evitarea utilizarii de tabele temporare
+c) Optimizeaza costul operatorului join
+d) Optimizeaza costul operatorului de selectie
+
+- La ce se refera anomalia de executie concurenta Unrepeatable Read?
+a) La a doua citire a unui obiect se arunca o exceptie
+b) La doua modificari consecutive ale aceluiasi obiect se pastreaza prima valoare asignata
+c) La doua selectii consecutive, numarul inregistrarilor returnate difera
+d) La doua citiri consecutive ale aceluiasi obiect se obtin valori diferite
+
+- Ce inseamna ca o plnaiifcare este conflict-serializabila?
+a) Operatiile conflictuale sunt executate in aceeasi ordine ca intr-o planificare seriala
+b) Orice pereche de tranzactii conflictuale este executata fara intercalari ale operatiilor acestora
+c) Executia oricaror doua tranzactii in orice ordine nu afecteaza rezultatul final al bazei de date
+d) Executia oricaror 2 tranzactii in paralel nu afecteaza rezultatul final al bazei de date
+
+- Unul dintre scopurile protocolului Write Ahead Logging este:
+a) Asigurarea serializabilitatii planificarilor executate
+b) Asigurarea optimizarii executiei tranzactiilor
+c) Asigurarea unui acces concurent corespunzator la datele unei baze de date
+d) Asigurarea durabilitatii tranzactiilor
+
+- Care dintre urmatorii factori nu afecteaza costul executiei unei interogari
+a) Numarul de inregistrari intoarse de interogare
+b) Numarul de coloane afisate in rezultatul interogarii
+c) Dimensiunea fizica a discului de stocare a bazei de date
+d) Dimensiunea tabelelor implicate in interogare
+
+In contextul atribuirii de prioritati bazate pe timestamp si aplicand politica Wait-Die ce se va intampla la executia urmatoarei planificari?
+
+T1   	 	T2	
+			locak-S(A)
+			read(A)
+lock-X(B)
+read(B)
+write(B)
+lock-X(A)
+read(A)
+A <- A + 50
+write(A)
+			lock-S(B)
+			read(B)
+			display(A+B)
+
+a)T1 isi va incheia executia fara succes
+b)T1 si T2 se vor finaliza cu succes
+c)T1 si T2 intra in deadlock
+d)T2 isi va incheia executia fara succes
+
+- Ce se intampla la un checkpoint?
+a) Este creat un graf de asteptare pentru a verifica daca mai multe tranzactii au intrat intr-un deadlock
+b) Se deblocheaza toate obiectele blocate in mod partajat sau exclusiv de tranzactiile curente
+c) Se suspenda tempora tranzactiile active pentru a se salva pe disc paginile modificate din memoria interna.
+d) Se parcurge logul bazei de date pentru a determina daca este necesara pornirea procesului de recuperare a datelor
+
+- Care dintre urmatoarele aspecte nu reprezinta un obiectiv principal al securitatii bazelor de date?
+a) Integritatea datelor
+b) Criptarea datelor
+c) Disponibilitatea datelor
+d) Secretizarea datelor
+
+- Care este cea mai potrivita descriere a procesului de optimizare a interogarilor?
+a) Procesul de transformare a interogarilor in planuri de executie eficiente
+b) Procesul de evaluare a tehnicilor de avaluare a operatorilor relationali
+c) Procesul de transformare a planurilor de executie in planuri fizice
+d) Procesul de decriptare optima a datelor interogate
+
+
+- Care dintre urmatoarele planificari sunt conflict-serializabile?
+S1 = R3(z), W2(x), W2(y), R1(x), R3(x), R2(z), R3(y), W1(x)
+S2 = W2(x), W1(x), R3(x), R1(x), W2(y), R3(y), R3(z), R2(x)
+S3 = R3(z), R3(y), W2(y), R2(z), W1(x), R3(x), W2(x), R1(x)
+S4 = R2(z), W2(x), R3(z), W1(x), W2(y), R1(x), R3(x), R3(y)
+
+a) S2 si S3
+b) S3 si S4
+c) S1 si S2
+d) S1 si S4
+
+- Care este in teorie scopul optimizarii interogarilor
+a) Evaluarea celor mai slabe planuri de executie
+b) Analizarea tuturor planurilor de executie potrivite
+c) Gasirea planului de executie optimal
+d) Evitarea celor mai costisitoare planuri de executie
+
+- Care dintre urmatoarele afiramtii NU se refera la replicarea asincrona cu site principal?
+a) Copiile secundare nu vor putea fi modificate direct de catre o tranzactie
+b) Dintre toate copiile, una singura este copia master, si aceasta este publicata
+c) Copiile care nu sunt primare sunt notificate instantaneu de exsitenta unei modificari pe copia primara
+d) Orice modificare efectuata pe o copie master este propagata imediat copiilor secundare in doi pasi: captuare modificare si aplicare
+
+- Care dintre urmatoarele afirmatii priving planificarile tranzactiilor concurente este falsa?
+a) Mutlimea planificarilor serializabile includ planificari seriale
+b) Exista planificare ce nu sunt serializabile
+c) Multimea planificarilor conflict-serializabile si multimea planificarilor seriale nu au elemente comune
+d) Exista si planificari serializabile ce nu sunt conflict-serializabile
+
+- Care este principiul avantaj al replicarii sincrone ROWA?
+a) Asigura consistenta datelor pe toate nodurile / site-urile la orice moment
+b) Simplifica administrarea si configurarea replicarii intr-un mediu distribuit
+c) Permite cresterea performantei prin distribuirea cererilor de citire pe nodurile disponibile
+d) Reduce timpul de replicare si intarzierile intr nodurile distribuite
+
+- La ce se refera conceptul de independenta a datelor distribuite?
+a) Modificarea modului de distribuire a datelor nu afecteaza performanta aplicatiilor
+b) Schimbare modelului de distribuire a datelor nu afecteaza structura logica a bazei de date
+c) Replicarea datelor pe mai multe servere nu presupune modificarea fragmentarii datelor
+d) Granularitatea fragmentarii datelor nu influenteaza disponibilitatea acestora
