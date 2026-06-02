@@ -1,0 +1,15 @@
+- Se considera urmatoarea problema: Cerinte sistem
+  Se cer urmatoarele: 
+  1) Identificati actorii, cazurile de utilizare aferente acestora si trasati diagrama cazurilor de utilizare
+  2) Descrieti cazul de utilizare si realizati un prototip al interfeti grafice asociate
+  3) Indetificati conceptele, atributele acestora si relatiile ditnre ele si realizati diagrama de clase corespunzatoare modelului conceptual
+  4) Trasati diagrama de secventa pentru un scenariu normal al cazului de utilizare
+  5) Trasati diagrama detaliata de clase, care sa includa si noile clase identificate la punctul 4. Aceasta diagrama va trebui sa includa atat atributele si metodele claselor, cat si relatiile dintre clase.
+
+- Se considera urmatoarea problema: Inscriere candidat
+  Se cer urmatoarele:
+  1) Identificati actorii, cazurile de utilizare aferente acestora si trasati diagrama cazurilor de utilizare
+  2) Descrieti cazul de utilizare si realizati un prototip al interfeti grafice asociate
+  3) Indetificati conceptele, atributele acestora si relatiile ditnre ele si realizati diagrama de clase corespunzatoare modelului conceptual
+  4) Trasati diagrama de secventa pentru un scenariu normal al cazului de utilizare
+  5) Trasati diagrama detaliata de clase, care sa includa si noile clase identificate la punctul 4. Aceasta diagrama va trebui sa includa atat atributele si metodele claselor, cat si relatiile dintre clase.
