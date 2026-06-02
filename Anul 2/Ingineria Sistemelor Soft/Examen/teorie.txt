@@ -1,0 +1,46 @@
+- argumentati necesitatea realizarii modelelor in procesul de dezvoltatre al softului
+- ce diferenteiaza relatia de compunere de cea de agregare
+- descrieti sablonul de proiectare Strategy
+- folosind UML si OCL, dati un exemplu de invairant xare sa foloseasca iteratorul forAll pe colectii.
+- explicati diferenta dintre domeniul problemei si domeniul solutiei
+- definiti conceptul de scenariu
+- dati un exemplu de diagrama obiecte corespunzatoare unei diagrame de clase
+- explicati modul in care numele de roluri si multiplicitatile specificate la nivelul diagramei de clase influenteaza codul sursa aferent acelei diagrame
+- explicati semnfiicatia stereotipurilor, <<entity>>, <<boundary>> si <<control>> 
+- 3 exemple de stiluri arhitecturale
+- justificati utilitatea sablonului de proiectare Proxy
+- definiti conceptul de delegare
+- SOLID open-close principle
+- enuntati regula privind mostenirea contractelor referitor la preconditii
+- design by contract - princpiul non-redundantei
+- care sunt proprietatiile unei relatii de asociere intre clase si cum se reflecta acestea in codul dsursa scris pe baza unei diagrame de clase? Dati exemple (model vs cod)
+- descire sablonul structural Composite
+- care este esenta abordarii Design by Contract referitor la asigurarea fiablitatii sistemelor soft?
+- ilustrare, folosind exemple, modalitati de reprezentare a ierarhiilor de mostenire din modelul obiectual la nivelul bazelor de date relationale
+- care este utilitatea realizarii diagramelor de interactiune in etapa de analiza a unui sistem soft
+- care sunt regulile de reprezentare a numelor de roluri si multiplicitatilor capetelor de asociere in codul sursa? Dati exemple (diagrama si cod)
+- care sunt diferenteleze dintre modelul structural de analiza si cel corespunzator etapei de proiectare a unui sistem?
+- o asociere de tip many-to-many la nivelul modelului trebuie descompusa? Care este alternativa la descompunerea uzuala si in ce conditii se justifica? Exemplu
+- care este utilitatea numelor de rol la nivelul diagramelor de clase? Cum afecteaza acestea codul sursa scris pe baza respectivelor diagrame (exemplu model vs cod)
+- ce credeti ca diferentiaza ingeneria programrii de ramurile ingineresti clasife (in afara de natura produsului final)?
+- realizati o diagrama de clase care sa reprezinta relatiile dintre parinti si copii 
+- care sunt proprietatile unei relatii de asociere intre clase si cum se reflecta in codul sursa scris pe baza unei diagrame de clase?
+- argumentati necesitatea realizarii modelelor in procesul de dezvoltare al softului
+- dati un exemplu de asociere many-to-many bidirectionala si ilustrati modalitatea de reprezentare a acesteia in cod sursa
+- ce diferentiaza etapa de analiza de etapa de colectare a cerintelor unui sistem soft
+- ce intelegeti prin asociere unidirectionala, respectiv bidirectionale intre 2 clase? dati exemple si explicati diferentele la nivelul codului sursa aferent
+- explicati diferenta dintre etapa de analiza si cea de proiectare din ciclul de dezvoltare a softului
+- enumerati activitatile tehnice dezvoltare de soft orientate obiect
+- ilustrati, folosind un exemplu, modalitatea de transformare a unei clase de asoceire in clase de asocieri obisnuite
+- in ce consta testarea bazata pe echivalente
+- ilustrati modalitatea de transformare in cod a asocierilor calificate
+- descrieti sablonul Adapter
+- ilustrati modalitatile de reprezentare a ierarhiilor de mostenire din modelul obiectual la nivelul bazelor de date relationale
+- ilustrati modalitatile de reprezentare a ierarhiilor de asociere din modelul obiectual la nivelul bazelor de date relationale
+- justificati necesitatea utilizarii limbajului ocl in modelare
+- care este semnificatia dreptunghiurilor de activare din diagremele de secventa si ce regula trebuie respectata priving dimensionarea acestora?
+- explicati conceptul de delegare si exemplificati
+- dati un exemplu de transformare la nivelul modelului si explicati rolul acesteia
+- explicati, folosind un exemplu, principiul SOLID al separarii interfelor
+- in cazul anumitor stiluri arhitecturale, gestiunea datelor persistente este asigurata folosind un nivel dedicat. Caror obiective de proiectare le corespunde o astfel de decizie?
+- poate sistemul fi considerat un actor? justificati
