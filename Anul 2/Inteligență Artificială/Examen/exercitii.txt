@@ -668,3 +668,90 @@ a. Se mai numeste operator de incrucisare
 b. Combina elemente din mai multe potentiale solutii
 c. Se numeste mutatie
 d. este cunoscut ca si reprezentare
+
+- In algoritmii evolutivi, operatorii de variatie:
+a. sunt operatorii de selectie prin ruleta
+b. actioneaza la nivelul populatiei
+c. actioneaza la nivelul individului
+d. pot fi de incrucisare sau de mutatie
+
+- In contextul problemei comis voiajorului, un algoritm evolutiv generational porneste cu o populatie de 60 de potentiale solutii. In timpul evolutiei se efectueaza o selectie pe baza de ruleta, incrucisare cu o singura taietura (care genereaza un singur descendent) si mutatie prin inversare. Precizati cate evaluari ale functiei de fitness au fost efectuate dupa primele 7 de generatii.
+a. 60
+b. 7
+c. 420
+
+- Schema evolutiva steady state poate modifica (in cadrul unei iteratii):
+a. toti cromozomii din populatia viitoare
+b. cel mai slab cromozom din populatia curenta
+c. toti cromozomii din populatia curenta
+d. oricare cromozom din populatia curenta
+
+- Considerandu-se problema comisului voiajor cu 32 de orase, cate gene poate avea un cromozom cu reprezentare de tip permutare intr-un algoritm evolutiv care ar rezolva problema?
+a. n(n-1)/2, unde n este numarul de orase
+b. 16
+c. 32
+
+- Explorarea spatiului de cautare pentru a considera solutii din afara optimelor locale se poate face prin:
+a. Procesul de selectie
+b. Operatorii de mutatie
+c. Operatorii de recombinare
+
+- Doar privind populatia initiala a unui algoritm genetic putem spune daca acesta va fi capabil sa evolueze solutia optima?
+a. Nu, pentru ca evolutia acestui tip de algoritm nu este determinista
+b. Da, un algoritm genetic va evolua intotdeauna solutia optima
+
+- Care dintre urmatorii operatori reprezinta operatori de variatie:
+a. Operatori de mutatie
+b. Operatori de recombinare
+c. Operatori de incrucisare
+
+- Care dintre urmatoarele afirmatii despre procesul de selectie dintr-un algoritm evolutiv este adevata?
+a. In selectia prin ruleta, mereu este selectat individul cu cel mai bun fitness
+b. In selectia prin ruleta, indivizii cu scor fitness mai bun au sanse mai mari sa fie selectati
+c. Selectia bazata pe ranguri are o complexitate mai mica decat selectia proportionata
+d. Selectie prin turnir nu lucreaza cu intreaga populatie
+
+- Care dintre urmatoarele tehnici este o metoda de selectie folosita in cadrul algoritmilor evolutivi:
+a. Prin n puncte de taietura
+b. Prin turnir
+c. Selectie tare
+
+- In ceea ce priveste reprezentarea cromozomilor sub forma de permutare:
+a. Aceasta reprezentare se poate folosi pentru problemele in care fiecare element al solutiei apare o singura data in solutie
+b. Aceasta reprezentare se poate folosi pentru problemele in care fiecare element al solutiei apare de multiple ori in solutie
+c. Se preteaza aplicarea unui operator de mutatie prin inversarea a 2 elemente ale solutiei (swap)
+d. Se preteaza la o mutatie tare
+
+- Operatorul de mutatie lucreaza la nivel de:
+a. Populatie
+b. Cromozom
+
+- Care dintre urmatoarele reprezentari ale unui cromozom intr-un algoritm evolutiv se poate aplica pentru problema de detectie a comunitatilor?
+a. Locus-based (reprezentare pe vecinitati)
+b. Child-based (reprezentare pe baza de noduri copii)
+
+- Mutatia, implicata in algoritmii evolutivi, este un operator de cautare:
+a. Unar
+b. Binar
+c. Ternar
+
+- Operatorul de selectie lucreaza la nivel de:
+a. Populatie
+b. Gena
+c. Individ
+
+- Eficienta algoritmilor genetici depinde de:
+a. Conditiile initiale
+b. Dimensiunea populatiei
+c. Tipurile de operatori folositi
+
+- In cadrul unui algoritm evolutiv populatia initiala:
+a. Este generata aleator
+b. Este generata inainte de inceperea evolutiei
+c. Este generata dupa fiecare ciclu evolutiv
+d. Este generata utilizand distributia de probabilitate normala
+e. Este generata utilizand distributia pe probabilitate uniforma
+
+- Cand folosim operatorul de incrucisare, daca unul dintre copii este la fel ca unul dintre parinti, atunci ambii parinti trebuie sa fie identici.
+a. Adevarat
+b. Fals
