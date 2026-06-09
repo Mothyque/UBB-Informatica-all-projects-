@@ -1,0 +1,670 @@
+- In algoritmul K-Means clusterii initiali se pot alege:
+a. aleator
+b. din regiunile cel mai dense
+c. doar din datele de antrenament
+
+- Care din urmatoarele probleme poate fi rezolvata cu un algoritm K-Means:
+a. clasificarea unui set de documente in functie de continutul si subiectul acestora
+b. stabilirea numarului de magazine care trebuie deschise si locatia acestora bazandu-ne pe istoricul comenzilor
+c. stabilirea diferitelor clase de masini auto pe baza unui set de date dat
+
+- Indexul Davies-Bouldin determina:
+a. raportul dintre cea mai mica distanta dintre clusteri si cea mai mare distanta dintr-un cluster
+b. distanta medie intre un obiect si clusterele din care obiectul nu face parte
+c. raportul dintre suma distantelor intre centroizii a fiecarei perechi clustere si numarul de clustere
+
+- Care din urmatoarele sunt tehnici de clustering:
+a. algoritmi de tipul divide-et-impera
+b. algoritmi divizativi
+c. K-Means
+
+- Care din urmatoarele probleme nu poate fi rezolvata cu un algoritm K-Means:
+a. filtrarea mesajelor de tip spam
+b. toate de mai sus pot fi rezolvate cu K-Means
+c. identificarea sirilor false dintr-o colectie de articole
+d. stabilirea zonelor in care se comanda cele mai multe taxiuri pe baza unui istoric
+
+- Indexul Dunn determina:
+a. distanta medie intre un obiect si clusterele din care obiectul nu face parte
+b. raportul dintre cea mai mica distanta dintre clusteri si cea mai mare distanta dintr-un cluster
+c. distanta intre centroizii a doua clustere
+
+- O retea neuronala artificiala poate accepta date de intrare:
+a. discrete
+b. continue
+
+- In regula delta de invatare calitatea modelului se stabileste:
+a. pentru toate dintre datele de intrare
+b. pentru una dintre datele de intrare
+
+- Intr-o iteratie a unei retele neuronale se proceseaza:
+a. toate datele de antrenament daca reteaua este in procesul de invatare
+b. o singura data de intrare
+c. toate datele de intrare
+
+- Valoarea data de formula: nr. de exemple pozitive corect clasificate / nr. total de exemple pozitive reprezinta:
+a. eroarea
+b. precizia
+c. rapelul
+
+- In versiunea Stochastic Gradient Descent eroarea se calculeaza:
+a. pentru fiecare exemplu din datele de antrenament
+b. pentru fiecare exemplu din datele de test
+c. pentru fiecare exemplu atat din datele de test cat si pentru cele de antrenament
+
+- Pentru care din scenariile de mai jos nu se poate aplica metoda celor mai mici patrate:
+a. prezicerea genului unei persoane pe baza scrisului
+b. prezicerea preturilor caselor pe baza zonei geografice
+c. prezicerea numarului de albume care vor fi vandute saptamana viitoare
+
+- In versiunea Batch Gradient Descent eroarea se calculeaza:
+a. pentru fiecare exemplu din datele de test
+b. pentru fiecare exemplu din datele de antrenament
+c. pentru fiecare exemplu atat din datele de test cat si pentru cele de antrenament
+
+- Calitatea unui algoritm de invatare supervizata poate fi masurata prin:
+a. robustete
+b. scalabilitate
+c. eficienta
+
+- Metoda celor mai mici patrate se poate aplica:
+a. pentru a prezice valori pe baza unui istoric
+b. pe orice tip de date
+c. pentru a determina relatia liniara dintre input si output
+
+- Residual plot se foloseste pentru a verifica daca pe un set de date se poate aplica:
+a. un algoritm de prezicere non-liniar
+b. un algoritm de prezicere liniar
+c. aplica algoritmul "metoda celor mai mici patrate"
+
+- Scorul F1 combina:
+a. eroarea
+b. rapelul
+c. precizia
+d. acuratetea
+
+- In cazul problemei comisului voiajor cu 50 orase, un algoritm de tip ACO poate lucra cu un nr de furnici egal cu:
+a. 50!
+b. 1
+c. 25
+d. 50
+
+- Se considera problema comisului voiajor cu n orase si m = n * (n - 1)/2 muchii, orasele fiind uniform distantate intre ele (orice muchie din cele m intre 2 orase are acelasi cost c) si un algoritm ACO cu 5 furnici care lasa o unitate f de feromon pe fiecare muchie traversata. Cate unitati de feromon se vor afla dupa 5 pasi efectuati de fiecare furnica, pe muchia cu cel mai mult feromon(comisul voiajor doreste vizitarea tuturor oraselor, fara intoarcerea in orasul de start)?
+a. mai mult de n*f
+b. exact n*f
+c. mai putin de n*f
+
+- Pentru un cromozom cu reprezentarea de tip permutare c = (3, 4, 5, 2, 1, 7, 6), prin aplicarea unei mutatii prin inversare intre genele de pe pozitiile 2 si 5 (indexarea genelor incepe de la 1) se obtine cromozomul:
+a. (3, 4, 7, 2, 1, 5, 6)
+b. (3, 1, 2, 5, 4, 7, 6)
+c. (3, 4, 5, 2, 1, 7, 6)
+d. (3, 1, 5, 2, 4, 7, 6)
+
+- Pentru problema comisului voiajor cu n orase se poate folosi o reprezentare de tip:
+a. vector binar de lungime n
+b. nici un raspuns nu este corect
+c. matrice binara de dimensiune n * n
+d. permutarea de n elemente
+
+- Schema evolutiva generationala in cazul unui algoritm cu 10 cromozomi si 5 generatii presupune aplicarea operatorului de selectie de:
+a. 50 ori
+b. 10 ori
+c. 5 ori
+d. 100 ori
+
+- Algoritmii de tip ACO identifica solutia unei probleme de optimizare in mod:
+a. combinat
+b. euristic
+c. determinist
+
+- Intr-un algoritm PSO fiecare particula are:
+a. o pozitie
+b. o viteza
+c. un fitness
+
+- In algoritmul ACO, o furnica va alege urmatorul oras vizitat in functie de:
+a. viteza
+b. fitness
+c. feromon
+
+- Pentru un cromozom cu reprezentarea de tip permutare c1 = (3, 4, 5, 2, 1, 7, 6) si c2 = (1, 2, 3, 4, 5, 6, 7), prin aplicarea unei incrucisari prin ordonarea folosind genele dintre pozitiile 2 si 4 (indexarea incepe de la 1) se obtine cromozomul:
+a. (3, 4, 5, 2, 6, 7, 1)
+b. (1, 2, 3, 4, 5, 6, 7)
+c. nici un raspuns nu este corect
+d. (3, 4, 5, 2, 1, 7, 6)
+
+- Care dintre operatorii de selectie se poate folosi in rezolvarea problemei comisului voiajor cu ajutorul unui algoritm genetic:
+a. operatorul bazat pe inversare
+b. operatorul bazat pe K-Turnir
+c. operatorul bazat pe ruleta
+d. operatorul bazat pe ranguri
+
+- Completati afirmatiile de mai jos:
+a. In cazul problemei platii sumei S folosind 4 tipuri (din fiecare moneda exista o singura bucata) arborele asociat spatiului de cautare explorat de DFS va avea un numar de frunze egal cu ________.
+b. Operatorul de incrucisare lucreaza la nivel de ________, in timp ce cel de selectie la nivel de ________.
+
+- Se considera n studenti care au promovat examenuld e AI, obtinand o anumita nota. Sa se imparta acest studenti in exact k grupe (k, n - numer naturale, k < n) astfel incat mediile grupelor astfel formate sa fie identice. Precizati care dintre urmatoarele afirmatii sunt adevarate:
+ - Se considera n studenti care au promovat examenul de AI, obtinand o anumita nota. Sa se imparta acesti studenti in exact k grupe (k, n - numere naturale, k < n) astfel incat mediile grupelor astfel formate sa fie identice. Precizati care dintre urmatoarele afirmatii sunt adevarate:
+a. In fiecare grupa exista exact n div k studenti
+b. Un algoritm evolutiv pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu k elemente cu toate valorile din {1, 2, ..., n}
+c. Un algoritm evolutiv pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu n elemente cu valori din {1, 2, ..., k}
+d. Un algoritm evolutiv pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu n elemente cu toate valorile din {1, 2, ..., k}
+
+- Precizati o asemanare intre cele 2 mecanisme de rezolvare a unei probleme de regresie: Stochastic Gradient Descent si Batch Gradient Descent.
+
+- Care dintre urmatoarele metrici nu au sens sa fie folosite in stabilirea performantei unui model de invatare automata bazata pe regresia logistica:
+a. eroarea medie patratica
+b. acuratetea
+c. precizia
+d. rapelul
+
+- Un algoritm de etichetarea automata a 20 de cuvinte (primele 10 fiind substantive, urmatoarele 6 verbe si ultimele 4 adjective) a stabilit ca primele 4 cuvinte si ultimele 2 cuvinte sunt substantive, cele 2 cuvinte din mijloc sunt verbe, iar restul sunt adjective. Care este performanta algoritmului?
+a. algoritmul are o acuratete de 40%
+b. algoritmul are o precizie medie de aprox. 66.6%
+c. rapelul clasificarii substantivelor este de 40%
+d. algoritmul are o acuratete de 35%
+
+- Algoritmii Greedy sunt folositi cand se doreste:
+a. Identificarea celei mai bune solutii
+b. Gasirea unei posibile solutii intr-un timp scurt
+
+- Care este numarul minim de muchii necesar a.i ca sa parcurgem cel mai scurt drum dintre 2 noduri intr-un graf neorientat complet unde fiecare muchi are o anumite pondere de distanta?
+a. n
+b. 2
+c. 1
+d. n - 1
+
+- Fiind date n evenimente (prin momentul de start si final), care dintre strategiile greedy urmatoare sunt considerate optimale in planificarea evenimentelor astfel incat cat mai multe dintre ele sa se poata desfaura (fara suprapuner):
+a. alegerea evenimentului care incepe cel mai devreme
+b. alegerea evenimentului care se termina cel mai devreme
+c. alegerea evenimentului care are cea mai mica durata
+
+- In cazul problemei rucsacului cu 4 obiecte, arborele asociat de cautare explorat de bfs va avea un numar de frunze egal cu:
+a. 4
+b. 16
+c. 8
+
+- Care este numarul minim necesar de muchii care trebuie parcurse sa poata fi vizitat fiecare nod dintr-un graf neorientat
+a. n- 1
+b. 2 * n
+c. n
+
+- Prin alegerea celei mai bune optiuni la fiecare pas, algoritmul greedy construieste
+a. o solutie
+b. o problema
+c. un algoritm
+
+- Care sunt cele 2 cerinte din lista de mai jos ce ar trebui sa fie indeplinite de o problema pentru a putea fi rezolvata prin intermediul unui algoritm evolutiv?
+a. putem formula o functie de fitness
+b. solutia generala poate fi sparta in solutii mai mici ce pot fi encodate ca si cromozomi
+c. solutia
+
+- Care este numarul maxim de copii care pot rezulta in urma unei incurcisari cu un punct de taietura pe 2 cromozomi c1 si c2?
+a. Oricati
+b. 2
+c. 1
+
+- Un posibil criteriu de oprire pentru un algoritm evolutiv este:
+a. s-a identificat solutia optima
+b. nu s-a gasit niciun rezultat
+
+- Care dintre metodele de mai jos reprezinta metode de selectie folosite in cadrul algoritmilor evolutivi
+a. selectie bazata pe taietura
+b. selectie bazata pe ruleta
+
+- In algoritmii evolutivi, operatii de variatie
+a. sunt operatorii de selectie prin ruleta
+b. actioneaza la nivelul populatiei
+c. actioneaza la nivelul individului
+d. pot fi de incrucisare sau de mutatie
+
+- Care dintre urmatoarele conditii pot fi folosite drept criteriu de oprire intr-un algoritm evolutiv generational:
+a. Atingerea numarului maxim de indivizi din populatie
+b. Identificarea solutiei optime
+c. Explorarea completa a spatiului de cautare
+
+- Selectia cromozomilor se poate face:
+a. aleator
+b. in functie de fitness
+c. pe baza varstei (numar de iteratii)
+
+- In contextul problemei comisului voiajor, un algoritm evolutiv generational porneste cu o populatie de 100 de potentiale solutii. In timpul evolutiei se efectueaza o selectie pe baza de ruleta, incrucisare cu o singura taietura (care genereaza un singur descendent) si mutatie prin inversare. Precizati cate evaluari ale functiei de fitness au fost efectuate dupa primele 10 generatii:
+a. 1000
+b. 100
+c. 10000
+
+- Completati afirmatiile de mai jos:
+a. In cazul unei probleme de clasificare a tweet-urilor in pozitive si negative pe baza prezentei sau absentei a 3 hash tag-uri (#happy, #fun, #sad) un arbore de decizie poate avea maxim ________ nivele (nodul radacina se afla pe nivelul 1)
+b. In algoritmii evolutivi, scopul operatorului de selectie este de a favoriza supravietuirea celor mai bune solutii, pe cand scopul operatorului de mutatie este ___________________________.
+c. TF:IDF este un concept care poate fi folosit cand se proceseaza informatii de tip _____________.
+d. Tehnica Greedy efectueaza o traversare a spatiului de cautare arborescent folosind metoda ____________________________.
+
+- Se considera o hrata cu n orase, pentru fiecare oras cunoscandu-se numarul de obiective turistice. Sa se distribuie toate aceste orase in k comunitati turistice (o comunitate este formata din unul sau mai multe orase) de aproximativ acealsi volum total al obiectivelor turistice. Un oras poate sa apartina unei singure comuntiati. Precizati care dintre urmatoarele afirmatii sunte adevarate in cazul folosirii unui algoritm genetic pentru rezolvarea problemei
+ - Se considera o harta cu n orase, pentru fiecare oras cunoscandu-se numarul de obiective turistice. Sa se distribuie toate aceste orase in k comunitati turistice (o comunitate este formata din unul sau mai multe orase) de aproximativ acelasi volum total al obiectivelor turistice. Un oras poate sa apartina unei singure comunitati. Precizati care dintre urmatoarele afirmatii sunt adevarate in cazul folosirii unui algoritm genetic pentru rezolvarea problemei
+ a. Un cromozom poate avea o reprezentare matriceala cu k x n elemente binare, iar suma elementelor de pe orice coloana este 1
+ b. Un cromozom poate avea o reprezentare vectoriala cu k elemente, fiecare element fiind o valoare din {1,2, ... , n} cu conditia ca fiecare valoare din {1,2, ... , n} sa apara cel putin data
+ c. Un cromozom poate avea o reprezentare vectoriala cu n elemente, fiecare element fiind o valoare din {1,2, ... , k} cu conditia ca fiecare valoare din {1,2, ... , k} sa apara cel putin data
+ d. Un cromozom va avea o reprezentare matriceala cu n x k elemente binare, iar suma elementelor de pe oricare linie este 1.
+
+- Prezentati o deosebire intre 
+a. operatorii de incrucisare si selectie folositi in algoritmii genetici
+b. algoritmul de optimizare bazat pe gradient folosit in Regresie si cel folosit in Regresie Logistica
+
+- Care dintre urmatoarele concepte pot reprezenta derivari (extinderi) ale conceptului de Metoda de invatare supervizata:
+a. Incrucisare
+b. Retea Neuronala Artificiala
+c. Algoritm Evolutiv
+d. K-Means
+
+ - Precizati cati coeficienti trebuie optimizati in cazul folosirii unei retele neuronale artificiale cu un strat ascuns cu 2 neuroni pentru predictia consumului de combustibil a unor vehicule pe baza puterii motorului si a anului de fabricatie a vehiculului. Excludeti din calcule bias-ul
+ a. 4
+ b. 6
+ c. 2
+ d. 8
+
+- O retea neuronala artificiala trebuie antrenata pentru a prezice numarul de excursii anuale efectuate de o persoana folosind informatii despre suprafata locuintei si salariul sau, prezentate in tabelul urmator:
+Suprafata | Salar | Nr. Excursii
+70 | 150 | 4
+50 | 145 | 5
+65 | 135 | 3
+55 | 130 | 4
+Reteaua neuronala are un strat ascuns cu 2 neuroni, functia de activare este functia identica (f(x) = x) iar fiecare pondere este initiata cu 0.5. Care este eroare medie patratica dupa prima epoca de antrenament a retelei folosind algoritmul de gradient descrescator?
+
+- Completati afirmatiile de mai jos:
+a. In invatarea supervizata, setul de date este format din perechi de ___________, utilizate pentru a invata o functie de predictie.
+b. In cazul regresiei logistice, clasificarea se bazeaza pe utilizare functiei ___________ pentru a produce o iesire intre 0 si 1.
+c. Operatorul de incrucisare lucreaza la nivel de ____________, in timp ce operatorul de selectie la nivel de ____________.
+d. In cazul problemei platii sumei S folosind 4 monezi de valori diferite, arborele asociat spatiului de cautare explorat de catre un algoritm de cautare exhaustiva va avea un numar de frunze egal cu ________.
+e. Daca o data (numerica) din setul nostru de date, deviaza foarte mult de la distributia celorlalte, se numeste ____________ si poate afecta negativ performanta modelului nostru de invatare automata.
+f. Pentru a crea indivizi noi intr-un algoritm genetic, se aplica urmatorii pasi: se aleg parintii prin utilizarea unui algoritm de ___________. Parintii sunt combinati prin pasul de ___________, iar cromozomului rezultat i se adauga informatie noua in pasul de ___________.
+g. Gradient descent urmareste minimizarea ___________ in vederea gasirii valorilor optime ale coeficientilor modelului.
+h. Notam dimensiunea latenta (embedding-ul) unui cuvant ca Emb(cuv). Atunci Emb("Franta") - Emb("Romania") + Emb("Bucuresti") este aproximativ egal cu Emb(___________).
+i. operatorul de mutatie din algoritmii evolutivi are aritatea egala cu ____________.
+j. In cazul unei probleme de clasificare a tweet-urilor in pozitive si negative pe baza prezentei sau absentei a 3 hash tag-uri (#happy, #fun, #sad) un arbore de decizie poate avea maxim ________ nivele (nodul radacina se afla pe nivelul 1).
+k. In algoritmii evolutivi scopul operatorului de selectie este de a favoriza supravietuirea celor mai bune solutii, pe cand scopul operatorului de mutatie este ___________________________.
+l. TF:IDF este un concept care poate fi folosit cand se proceseaza informatii de tip _____________.
+
+- Pentru o retea neuronala artificiala care din insiruirile urmatoarea descriu un subset de hyperparametrii ai retelei?
+a. datele de intrare, ponderile neuronilor, numarul de epoci
+b. datele de iesire, bias-urile neuronilor, ponderile neuronilor
+c. functia de cost, functia de activare, numarul de straturi neuronale
+d. rata de invatare, functia de activare, numarul de straturi neuronale
+
+- O retea neuronala convolutionala formata dintr-un singur strat avand un singur neuron primeste ca input o matrice de 6x6. Daca neuronul reteli are 4 ponderi dispuse in forma de 2x2 si un bias, iar el efectueaza operatiunea de convolutie cu pasul 1 care va fi dimensiunea hartii de activare rezultante? Justificati raspunsul
+
+- Se considera k melodii, fiecare melodie avand o anumita durata. Sa se imparta melodiile in exact n playlist-uri disjuncte nenule astfel incat duratele acestor n playlist-uri sa fie identice (k, n - numere naturale, n < k). Precizati care afirmatii sunt adevarate:
+a. Un algoritm genetic pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu n elemente cu toate valorile din {1, 2, ..., k}
+a. Un algoritm genetic pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu n elemente binare
+a. Un algoritm genetic pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu k elemente cu toate valorile din {1, 2, ..., n}
+a. Un algoritm genetic pentru rezolvarea aceste probleme foloseste cromozomi a caror reprezentare este un vector cu k elemente cu toate valorile din {1, 2, ..., k}
+
+- Prezentati o asemanre intre 
+a. Algoritmii genetici si algoritmii de tip ACO
+b. Cele 2 mecanisme de rezolvare a unei probleme de regresie Stochastic Gradient Descent si Batch Gradient Descent
+
+- Considerand biblioteca numpy si functia np.dot disponibila in aceasta biblioteca, pentru realizarea dot product-ului pentru urmatorul cod Python: y = np.dot([1,2,3], [3,2,1]) care dintre urmatoarele afirmatii este adevarata:
+a. Codul va produce o eroare fiindca al doilea parametru al produsului scalar trebuie sa fie un scalar (ex. np.dot([1,2,3], 4)) iar atunci valoarea lui y devine ([4,8,12])
+b. y = 10
+c. Codul va produce o eroare fiindca produsul scalar nu se poate efectua pentru vectori unidimensionale
+d. y = [3,4,3]
+
+- Intr-un LLM, parametrul temperatura din functia de inferenta are urmatorul efect:
+a. Temperatura afecteaza sentimentul raspunsului (temperatura mai mare genereaza un raspuns informal, iar cea mica un raspuns formal)
+b. Temperatura determina "creativitatea" raspunsului (temperatura mica duce la folosirea celor mai probabile cuvinte, iar temperatura mare permite utilizarea cuvintelor mai putin probabile in raspuns)
+c. Temperatura este parametrul responsabil pentru lungimea raspunsului
+d. Temperatura nu este un parametru folosit la inferenta, ci la pasul de fine-tunning, pentru a modifica influenta pe care datele noi o au asupra modelului pre-antrenat
+
+- Un arbore de decizie a impartit, pe baza unei singure conditii, datele de antrenament (in numar de 100), prezentate sub forma unor emailuri (bune sau spa) in 2 submultimi astfel: S1 contine 30 de emailuri bune, 30 de spam, S2 contine 40 de spam-uri. Calculati entropia multimilor S1 si S2 (justificati calculele efectuate).
+
+
+- Fie o problema de recunoastere a unei dintre litere A, B sau C in imagini. Pentru inceput se foloseste un set de date de antrenament format din 10 imagini gri de 4x4 pixeli. Se doreste rezolvarea problemei cu ajutorul unei retele neuronale cu 2 straturi ascunse, fiecare cu cate 2 neuroni. Toti neuronii din retea au asociate ca functii de activare functia sigmoid.
+a. Precizati si justificati numarul de neuroni de pe stratul de intrare
+b. Precizati si justificati numarul de coeficienti al retelei care trebuie optimizate. Justificati raspunsul. Excludeti din calcul bias-ul.
+
+- Definiti si exemplificati un concept invatat in cadrul cursului de AI. Folositi maxim 100 de cuvinte
+
+- O echipa de specialisti a construit un model de predictie util in identificarea posibilitatii ca un meteorit sa ciocneasca Terra folosind o baza de antrenare format din meteoritii care in ultimii 50 de ani au ciocnit Terra sau au trecut pe langa ea. Modelul construit a inregistrat pe setul de antrenare o acuratete de 99%. Este acest model de predictie performant? Justificati raspunsul.
+
+- Spitalul din Cluj a descoperit o noua boala mortala. Din fericire aceasta este tratabila daca este depistata din timp. Ai fost angajat sa antrenezi si sa evaluezi un model care pe baza datelor medicale diagnosticheaza pacientul. Ai obtinut 4 modele, cu performantele descrise mai jos. Pe care dintre acestea il vei folosi?
+a. Modelul 1 cu f1-score 0.85
+b. Modelul 2 cu acuratete 0.9
+c. Modelul 3 cu recall 0.7 si precizie 0.9
+d. Modelul 4 cu recall 0.9 si precizie 0.7
+
+- Care dintre urmatoarele afirmatii nu sunt adevarate pentru embedding-urile obtinute prin metoda one-hot enconding?
+a. Vectorii rezultanti contin valori de 0 si 1.
+b Vectorii rezultanti surprind relatia semantica dintre cuvinte
+c. Reprezentare ineficienta a cuvintelor in cazul vocabularelor extrem de lungi
+d. Vectorii rezultanti contin doar valori numerice
+
+- Care dintre urmatoarele afirmatii sunt corecte si complete?
+a. ChatGPT este un LLM
+b. GPT-3 este un LLM
+c. GPT-3 este un sistem care contine un LLM
+d. ChatGPT este un sistem care contine un LLM
+
+- Care dintre urmatoarele concepte pot reprezenta derivari prin relatia de mostenire ale conceptului de Metoda de invatare supervizata:
+a. Incrucisare
+b. Retea Neuronala Artificiala
+c. Algoritm Evolutiv
+d. Greedy
+
+- Precizati cati coeficienti trebuie optimizati in cazul folosirii unei retele neuronale artificiale cu un strat ascuns cu 2 neuroni pentru predictia consumului de combustibil a unor vehicule pe baza puterii motorului si a anului de fabricatie a vehiculului. Excludeti din calcule bias-ul
+a. 4
+b. 6
+c. 2
+d. 8
+
+- Folosind K-means si avand 3 centroizi (0,1), (2,1), (-1,2), punctele (2,3) si (2,0.5) vor fi atribuite aceluiasi cluster?
+a. Da
+b. Nu
+
+- Pentru o problema de clusterizare un algoritm de k-means poate fi evaluat folosind
+a. Eroare medie patratica
+b. Indecsi de evaluare interna
+c. Eroare medie absoluta
+
+
+- Evaluarea unui algoritm de regresie logistica se poate realiza folosind:
+a. MAE
+b. Acuratetea
+
+- Se considera un model de clasificare bazat pe regresia logistica folosit pentru a separa emailurile de tip spam de cele de tip not-spam. Daca se mareste pragul de decizie ce se intampla cu precizia clasificatorului?
+a. Sigur descreste
+b. Probabil descreste
+c. Probabil creste
+d. Sigur creste
+
+- O retea neuronala artificiala va fi folosita pentru a prezice productia de oua de ciocolata a unei cofetarii pe baza a doua informatii: pretul ingredientelor si numarul mediu de clienti ai cofetariei intr-o luna. Arhitectura retelei neuronale va cuprind un numar de straturi egal cu:
+a. 3
+b. 10
+c. 5
+
+- Au fost colectate date cu privire la temperatura zilnica si cati bani au fost castigati de o companie de inghetata. Temperatura variaza intre 60 si 90 de grade Fahrenheit. Linia regresiei prin metoda celor mai mici patrate este calculata. Care dintre urmatoarele propozitii descrie cel mai bine folosind informatiile anterioare pentru a prezice vanzari cand temperatura este 50 de grade Fahrenheit?
+a. Prezicerea poate sa fie utila dar o sa fie mai putin de incredere avand in vedere ca avem o valoare mai mica decat intervalul din setul nostru de date
+b. Nu este posibil sa calculam numarul vanzarilor
+c. Prezicerea este de incredere deoarece folosim regresia
+
+- Metoda de invatare automata bazata pe gradientul descrescator permite:
+a. Predictia unei valori pe baza unui model antrenat
+b. Stabilirea performantei unui model de regresie pe baza datelor de test
+c. Estimarea parametrilor unui model de regresie
+
+- Se considera o problema de regresie in care fiecare din cele 50 avut la dispozitie pentru antrenare 5 atribute pozitive si un singur ouput. Pentru unul din exemple, modelul matematic al regresorului corespunde expresiei 2.3 + 3.2 * 4 + 11.0 * 3 + (-11.2) * 2 + 55.2 x 1 + (-12.0) x 13. Care sunt valorile atributelor acestui model?
+a. 2.3, 3.2, 11.0, -11.2, 55.2, -12.0
+b. 4, 3, 2, 1, 13
+c. 1, 4, 3, 2, 1, 13
+
+- Pentru a putea prezice cate puncte va inscrie o echipa de baschet in functie de statisticile acesteia din ultimele 10 meciuri, ce metoda de rezolvare s-ar potrivi:
+a. Regresie
+b. Clasificare
+
+- In care dintre urmatoarele scenarii o valoare mare a acuratetii indica un model de invatare automata performant?
+a. O afectiune medicala mortala, dar curabila, afecteaza .01% din populatie. Un model de invatare automata foloseste simptomele populatiei analizate drept caracteristici si prezice aceasta afectiune cu o acuratete de 99.99%.
+ b. Un robotel scump (ca pret) traverseaza un drum foarte aglomerat de o mie de ori pe zi. Un model de invatare automata evalueaza situatiile de trafic si prezice cand acest robotel poate traversa in siguranta strada cu o acuratete de 99.99%.
+ c. Intr-un joc de ruleta, o bila este aruncata pe roata si in cele din urma aceasta se opreste intr-unul dintre cele 38 de sloturi. Folosind caracteristici vizuale (numarul de rotatii ale mingii, pozitia rotii la aruncarea mingii, inaltimea relativ la roata de la care a fost aruncata bila), un model de invatare automata poate prezice slotul pe care mingea va ateriza cu o acuratete de 14%.
+
+- In cadrul unui algoritm genetic operatia de mutatie (mai multe variante):
+a. Poate sa introduca indivizi nefezabili
+b. Se aplica asupra descendentilor produsi de operatia de recombinare
+c. Are probabilitate mica
+d. Se aplica imediat inaintea fiecarei etape de selectie a generatiei urmatoare
+e. Intotdeauna produce indivizi fezabili
+
+- Algoritmul ACO se poate folosi pentru 
+a. Problema turnurilor din Hanoi
+b. A identifica solutia ecuatiei 3*x^5 + sin(x)*log(3 + tg(x))
+c. A identifica o planificare optima a unor procese pe mai multe masini de calcul
+
+- Operatorul de mutatie folosit de algoritmii evolutivi este un operator:
+a. Ternar
+b. Unar
+c. Binar
+
+- Se considera problema separarii unei multimi de 10 copii in 3 cluburi disjuncte: cei care participa la clubul de activiati sportive, cei care participa la clubul de lectura si cei care participa la clubul muzical. Fiecare copil trebuie sa faca parte dintr-un club si fiecare club trebuie sa aiba membri. Care dintre reprezentarile urmatoare ar putea codifica solutii ale problemei:
+a. O matrice binara cu 10 linii si 3coloane, astfel incat suma pe oricare coloana sa fie 1.
+b. Un vector cu 10 valori
+c. O matrice binara cu 10 linii si 3 coloane, astfel incat suma pe oricare linie sa fie 1 si suma pe fiecare coloana >= 1.
+
+- Tehnica Greedy efectueaza o traversare a spatiului de cautare arborescent folosind metoda:
+a. Cautarii Exhaustive
+b. Cautarii in Adancime (DFS)
+c. Cautarii in Latime (BFS)
+
+- Se da urmatorul cromozom cu reprezentare binara c = 1,0,1,0,0,0 pe care se aplica mutatie slaba in cadrul unui algoritm evolutiv. Care dintre urmatoarele reprezentari este posibil a fi obtinuta in urma mutatiei?
+a. 1,2,4,5,3,4
+b. 2,3,2,2,4,4
+c. 1,1,1,0,0,1
+
+- Intr-o problema de regresie liniara simpla, cu o singura variabila de intrare(x) si o singura variabila de iesire (y), y = ax + b, unde a si b sunt ___________ si respectiv ___________:
+a. panta, interceptul
+b. coeficient de caracteristica, bias Coefficient
+c. bias Coefficient, coeficient de caracteristica
+
+- Se construieste un lant Markov cu o singura stare pentru textul "mere cu mere nu mere cu numere". Care este probabilitatea ca lantul markov sa genereze cuvantul cu dupa cuvantul mere?
+a. 50.0%
+b. 66.66%
+c. 33.33%
+d. 0.0%
+
+- Un algoritm inteligent clasifica 100 de imagini continand caini si pisici; 20 de imagini cu caini si 50 de imagini cu pisici sunt corect clasificate. Algoritmul prezice in mod eronat ca 12 imagini cu caini sunt de fapt imagini cu pisici si 18 imagini cu pisici sunt de fapt cu caini. Care este precizia algoritmului pentru clasa pisica?
+a. 73%
+b. 76%
+c. 80%
+d. 90%
+e. 100%
+
+
+- Care dintre urmatoarele nu intre in mod traditional in componenta unui Transformer folosit pentru generare text?
+a. Decoder
+b. Atentie
+c. Encoding-uri pozitionale ale cuvintelor
+d. Word embeddings
+e. Lant Markov
+f. Query, Cheie si Valoare
+
+- Un atelier de reparatii auto gestioneaza o baza de date cu diverse piese. Aceste piese au 5 atribute: lungime, latime, inaltime, greutate si forma. Primele 4 atribute sunt de tip numeric, iar ultimul, forma, este de tip text, putand sa ia exclusiv valorile: "rotund", "patrat", "triunghiular", "nespecificat". Cum ar trebui procesata coloana cu atribute de tip forma pentru a o converti in mod corect la valori numerice in vederea pregatirii pentru introducerea intr-un algoritm inteligent?
+a. Se vor folosi embedding-uri de tip forma, astfel incat datele de intrare vor contine o lista hibrida: cu valori numerice pentru primele 4 atribute (lungime, latime, inaltime, greutate) si cu o sublista de embedding-uri pentru forma.
+b. Se va elimina coloana cu atributele de tip forma.
+c. Se vor asigna valori numerice discrete, de tipul 0,1,2,3 fiecarui tip de forma.
+d. Se vor normaliza datele
+
+- Antrenarea unui model de regresie folosind metoda gradientului descrescator va identifica coeficienti ai modelului de regresie care sunt:
+a. Numere reale
+b. Numere pozitive intotdeauna
+c. Numere negative intotdeauna
+
+- Care dintre urmatoarele tipuri de embedding-uri reuseste cel mai bine sa surprinda detalii semantice
+a. One-hot encoding
+b. Bag of words pentru propozitii
+c. Word2Vec
+d. TF-IDF
+
+- Fie urmatorii doi cromozomi (1,2,1,2,1) si (2,2,1,1,2).Pentru a genera un nou individ cei doi cromozomi se combina prin recombinarea cu o singura taietura, iar rezultatul sufera o mutatie (una dintre gene este schimbata cu o valoare aleatorie). Care dintre urmatorii cromozomi NU poate fi rezultatul acestei serii de operatii?
+a. (2,2,1,1,1)
+b. (2,2,1,1,2)
+c. (1,2,1,1,1)
+d. (2,1,2,1,2)
+e. (2,1,1,2,1)
+
+- Care dintre operatorii de selectie se poate folosi in rezolvarea problemei comis voiajor cu ajutorul unui algoritm genetic:
+a. operatorul bazat pe inversare
+b. operatorul bazat pe ranguri
+
+- In cadrul unei probleme de regresie logistica, output-ul ia valori din intervalul:
+a. [-1, 1]
+b. [0, inf]
+c. [0, 1]
+d. [-inf, inf]
+
+- Se considera mai multe valori care pot indica daca un pacient are probleme cardiace sau nu. Aceasta problema este de tip:
+a. Clasificare
+b. Regresie
+
+- In cazul unei probleme de clasificare a cifrelor in baza 2 antrenarea timp de 15 epoci prin folosirea mecanismului de regresie logistica (bazat pe gradient stocastic) folosind un set de 30 de exemple de antrenament caracterizate prin 5 atribute implica un nr de modificari ale coeficientilor asociati clasificatorului egal cu:
+a. 4500
+b. 450
+c. 150
+d. 300
+
+- In algoritmii evolutivi, scopul operatorului de selectie este de a favoriza supravietuirea celor mai bune solutii, pe cand scopul operatorului de mutatie este:
+a. De a nu genera material genetic nou
+b. De a reintroduce in cromozom materialul genetic pierdut
+c. De a pastra neschimbat materialul genetic codat de cromozom
+
+- Metoda celor mai mici patrate:
+a. Antreneaza setul de date pentru a minimiza suma patratelor erorilor
+b. Antreneaza setul de date pentru a maximiza suma patratelor erorilor
+
+- Precizati valoarea de adevar a propozitiei: "Pentru a antrena o retea neuronala artificiala si a minimiza functia care depinde de coeficienti se poate folosi metoda gradientului descrescator.
+a. Adevarat
+b. Fals
+
+- In cazul unei probleme de clasificare binara, folosirea unui algoritm de tip Regresie Logistica presupune transformarea valorii reale calculata de modelul de predictie intr-o eticheta prin folosirea unei functii sigmoid si a unui prag de decizie (stabilit deobicei la 0.5). Cat este Recall-ul in cazul unui prag egal cu 0?
+a. Aprox 50%
+b. 100%
+c. Recall-ul are valoare externa pe domeniul lui de definitie
+
+- Care dintre urmatoarele concepte pot reprezenta derivari (extinderi) ale conceptului de Metoda de invatare supervizata:
+a. Incrucisare
+b. ANN
+c. K-Means
+
+- Se dau 2 cromozomi c1 = (0,1,1,0,1,0,1,1) si c2 = (0,0,1,1,0,1,1,1) daca se realizeaza o incrucisare cu 2 puncte de taietura dupa al 3-lea element, respectiv, al t-lea element, care din urmatorii cromozomi ar putea fi un copil rezultat (in cadrul unui algoritm evolutiv):
+a. Niciunul
+b. (0,1,1,1,0,1,0,1)
+c. (0,1,1,1,0,0,1,1)
+
+- "True positive value" este 10 si "false positive value" este 17. Care este valorea preciziei?
+a. 1
+b. 10/27
+c. 10/17
+
+- Un consultant de marketing ar vrea sa analizeze daca o reclama a functionat sau nu pentru a ajuta la vinderea unui produs, avand un grup specific de persoane targetate, predictie bazata pe numarul orelor petrecute in fata televizorului. Este folosirea regresiei logistice potrivita pentru aceasta problema?
+a. Regresia logistica nu este potrivita pentru ca variabila dependenta are doar 2 categorii
+b. Regresia logistica nu este potrivita pentru a face aceasta prezicere
+c. Regresia logistica este pe deplin potrivita in acest caz
+d. Regresia logistica nu este potrivita pentru ca doar o variabila prezisa este acceptata
+
+- Presupunem ca pentru o problema de regresie liniara avem un set de date de training, iar pentru setul nostru de date, reusim sa gasim w0 si w1 astfel incat f(w0,w1) = 0. Care dintre urmatoarele afirmatii sunt adevarate?
+a. Gradientul descrescator poate sa se blocheze la un minimi local si nu o sa mai gaseasca un minim global.
+b. Pentru a fi adevarat, o sa avem w0=0 si w1=0 astfel incat f(x) = 0
+c. Setul nostru de date de training o sa fie incadrat perfect de o linie dreapta (punctele se vor aseza perfect pe o linie dreapta)
+d. Pentru a fi adevarat, trebuie sa avem y(i) = 0 pentru fiecare valoare a lui i = 1,2,...m
+
+- Pentru o regresie simpla bivariata, datele de intrare sunt corelate. Cum trebuie tratat acest caz? 
+a. Dintre cele 2 coloane de intrare se elimina o coloane sau se obtine o combinatie liniara intre acestea si se inlocuiesc coloanele initial cu combinatia liniara obtinuta intre ele.
+b. E in regula sa avem date de intrare corelate pentru o problema de regresie. Nu e necesar sa se modifice nimic. 
+c. Se foloseste un regresor dintr-o librarie pentru ca in aceste conditii nu se poate implementa unul cu cod propriu.
+d. Se calculeaza regresia cu datele asa cum sunt, dar la final se va afisa o nota pentru utilizator: "Date corelate!"
+
+- Ce fel de cromozomi sunt selectati cel mai des pentru recombinare?
+a. Unul avand fitness cat mai bun, celalalt avand fitness cat mai slab
+b. Doi avand fitness cat mai bun
+c. Doi avand fitness cat mai slab
+d. Unul avand fitness cat mai slab, celalalt avand fitness cat mai bun
+
+- Care dintre urmatoarele functii nu este o functie de eroare
+a. MAE
+b. Binary cross-entropy
+c. MSE
+d. Sigmoid
+
+- In ce mod se obtine capturarea detaliilor semantice pentru embedding-urile de tip Word2Vec?
+a. Prin antrenarea unei retele neuronale folosind un corpus urias, astfel incat acesta sa contina texte in care fiecare cuvant este surprins in diferite contexte.
+b. Prin agregarea embedding-urilor de tip Bag of words, Tf-Idf si one-hot encoding
+c. Prin agregarea embedding-urilor de tipul bag of words, Tf-Idf si one-hot encoding pentru propozitii.
+d. Embedding-urile de tip Word2Vec nu captureaza detaliile semantice ale cuvintelor.
+
+- In cazul mutatiei, se pot folosi urmatoarele distributii:
+a. Lorem Ipsum
+b. Lacrosse
+c. Laplace
+d. Cauchy
+
+- Care dintre urmatoarele elemente nu fac parte din sistemul unui Transformer
+a. Value
+b. Table
+c. Query
+d. Key
+
+- Valorile de activare ale neuronilor dintr-un "strat ascuns", avand aplicata functia de activare sigmoid, sunt intotdeauna in intervalul (0,1):
+a. Fals
+b. Adevarat
+
+- Precizati valoarea de adevar a propozitiei: "Calitatea predicitiei realizate de o retea neuronala se poate masura cu functia de loss":
+a. Adevarat
+b. Fals
+
+- Se doreste realizarea predictiei unor indicatori economici pe baza datelor colectate de la clientii unei banci. Baza de date este formata din 50 de cleinti, caracterizati prin 100000 de atribute. Predicitia se realizeaza cu un model de regresie care cauta valorile optime ale parametrilor modelului de regresie. Care dintre metode se recomanda a fi folosite?
+a. Metoda celor mai mici patrate
+b. Regresia logistica
+c. Gradientul descrescator
+
+- Intr-un model ideal pentru extragerea embedding-urilor din cuvinte, care este un rezultat satisfactor pentru urmatoarea operatie: Emb("Paris") - Emb("Franta") + Emb("Romania")?
+a. Emb("Cluj-Napoca")
+b. Emb("Bucuresti")
+c. cartof
+d. Emb("Carpati")
+e. Ilfov
+
+- Gradient descent este un algoritm care se foloseste pentru rezolvarea problemelor:
+a. de clasificare
+b. de tip comis voiajor
+
+- Un algoritm de etichetara automata a 20 de cuvinte (primele 10 fiind substantive, urmatoarele 6 verbe si ultimele 4 adjective) a stabilit ca primele 4 cuvinte sunt adjective, urmatoarele 10 substantive si ultimele 6 verbe. Care este performanta algoritmului?
+a. Rapelul clasificarii substantivelor este 40%.
+b. Acuratetea este 40%.
+
+- Cum poate fi abordata problema localizarii obiectelor in imagini din perspectiva formularii acesteia ca problema de regresie?
+a. Nu poate fi abordata
+b. Prin prezicerea clasei obiectului aflat in imagine, ca problema de invatare supervizata
+c. Prin returnarea coordonatelor stanga-sus si dreapta-jos ale bounding box-ului care incadreaza obiectul din imagine, ca problema de regresie
+d. Prin generarea unei imagini diferite cu obiectul cautat, astfel incat numai trasaturile generale sunt pastrate de la o imagine la alta.
+
+- Un neuron poate invata folosind
+a. Regula mutatiei
+b. Regula perceptronului
+c. Regula incrucisarii
+
+- In cazul selectiei prin mecanismul ruletei:
+a. Un individ A al carui fitness este de 2 ori mai bun decat fitnessul unui individ B are sanse de 2 ori mai mari de a fi selectat
+b. Individul cu cel mai slab fitness nu va fi selectat niciodata
+
+- Care dinmtre urmatoarele afirmatii despre Transformeri este gresita?
+a. Pot fi antrenati atat pentru generare de text, cat si pentru alte tipuri de predictie, fiind o metoda robusta de invatare
+b. Pentru a performa la nivel optim, au nevoie de un numar considerabil de date
+c. In antrenarea lor unitatile de procesare grafica, pot fi folosite pentru reducerea timpului computational, intrucat Transformerii au abilitatea de a rula calcule, cum ar fi cele de procesare a datelor de intrare, in paralel.
+d. Sunt un model inteligent robust, capabila sa invete nesupervizat embedding-urile cuvintelor trimise ca parametrii de intrare, folosind o componenta markoviana (similara cu cea existenta in lanturile Markov)
+
+- Care dintre metodele de mai jos reprezinta o metoda de selectie folosite in cadrul algoritmilor evolutivi:
+a. Selectie baza pe puncte de taietura
+b. Selectie bazata pe ruleta
+
+- Standardizarea datelor de intrare, validare si teste folosind z-score. Standardizam datele de antrenament folosind media si deviatia standard calculata pe ele. Cum standardizam datele de validare si testare?
+a. Folosind mediasi deviatia standard obtinuta pe datele de antrenament.
+a. Folosind mediasi deviatia standard obtinuta pe datele de validare.
+a. Folosind mediasi deviatia standard obtinuta pe datele de testare.
+a. Folosind mediasi deviatia standard obtinuta pe datele de validare, respectiv testare.
+
+- Despre anumite imobile, se cunosc informatii precum: nr bailor, nr dormitoarelor, pretul, suprafata locuibila, suprafata terenului imobilului, nr de etaje.
+a. Precizati expresia unui model de regresie care sa poata prezice pretul unui imobil pe baza suprafetei terenului aferent.
+b. Precizati expresia unui model de regresie care sa poata prezice pretul unui imobil pe baza suprafetei locuibile si a numarului de dormitoare
+c. Descrieti un algoritm de invatare automata care ar putea fi folosit la antrenarea modeluluid e regresie de la punctul a.
+
+- Intr-o problema de clasificare cu n clase, ce functie de activare transforma valorile din nodurile de output in valori care descriu probabilitatile aferente fiecarei clase?
+a. Sigmoid
+b. MSE
+c. ReLU
+d. Softmax
+
+- In contextul problemei comisului voiajor, un algoritm evolutiv generational porneste cu o populatie de 50 de potentiale solutii. In timpul evolutiei se efectueaza o selectie pe baza de ruleta, incrucisare cu o singura taietura (care genereaza un singur descendent) si mutatie prin inversare. Precizati cate evaluari ale functiei de fitness au fost efectuate dupa primele 1000 de generatii.
+a. 50
+b. 50000
+c. 1000
+
+- In algoritmii evolutivi, operatorul de recombinare:
+a. Se mai numeste operator de incrucisare
+b. Combina elemente din mai multe potentiale solutii
+c. Se numeste mutatie
+d. este cunoscut ca si reprezentare
