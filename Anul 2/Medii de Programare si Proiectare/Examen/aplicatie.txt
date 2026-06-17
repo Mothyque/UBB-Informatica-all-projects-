@@ -1,0 +1,35 @@
+Cerinte generale: 
+- conteaza arhitectura si proiectarea (definire interfete si folosirea lor)
+- jurnalizare, fisiere de configurare, conectare la baza de date, orm
+- 2 servicii REST (respectarea regulilor de formare a URL-ului, a informatiilor ce trebuie returnate)
+- 1 client web pentru 1 serviciu REST
+- Observer distribuit (notificare)
+- se poate face un singur server si sa fie complet rest
+- aplicatia poate fi dezvoltata in orice limbaj de programare (Java, C#)
+- datele vor fi preluate/salvate dintr-o baza de date relationala
+- pentru o entitate se va folosi un instrument ORM pentru stocarea datelor (nu se accepta SpringJPA sau alte instrumente de tip micro-ORM)
+- pentru testarea serviciilor REST se va folosi un client REST (ex: Postman)
+
+
+1. Un joc cu un jucator. La inceputul jocului, sistemul va alege aleator din baza de date o configuratie (pozitie si indiciu) pentru o tabla de joc avand dimensiunea 4 x 4, iar jucatorul trebuie sa ghiceasca pozitia indicelui. Scopul este ca jucatorul sa ghiceasca pozitia indicelui in cat mai putine incercari. Jucatorul poate sa faca urmatoarele:
+a. Incepere joc. Pentru a porni un joc, jucatorul isi introduce aliasul asociat. Dupa verificarea ca aliasul corespunde unui jucator inregistrat in aplicatie, este afisata o tabela de joc goala si incepe jocul.
+b. Alegere pozitie. Fiecare jucaotr alege o pozitie de pe tabla de joc unde crede ca este indiciul. Daca indiciul este la pozitia alease de jucator, jocul se termina si jucatorul poate vizualiza indiciiul. Daca indiciul nu este la pozitia respectiva, sistemul afiseaza pe pozitia respectiva distanta de la aceea pozitie pana la indiciu (distanta euclidiana).
+c. Final joc. Jocul se termina fie la ghicirea pozitiei indicelui, fie dupa repetarea de cel mult 4 ori a cerintei 2. La finalul jocului, jucatorul va putea vizualiza pozitia indiciului, numarul de incercari, pana a ghicit pozitia (10 daca nu a ghicit pozitia indiciului) si pozitia lui in clasamentul tuturor jocurilor finalizate pana atunci. Pentru fiecare joc, in clasament se va afisa alias-ul jucatorului, data si ora la care a inceput jocul, numarul de incercari pana la ghicirea pozitiei indiciului si textul indiciului. (sirul vid daca nu a ghicit pozitie).  Daca in timp ce un jucaotr alege pozitiile, un alt jucator a finalizat un joc, clasamentul se va actualiza automat pentru a include si rezultatul respectiv.
+d. Un serviciu REST pentru un anumit jucator, permite vizualizarea tuturor jocurilor finalizate de el. Pentru fiecare joc se afiseaza numarul de incercari, pozitiile propuse si textul indiciului (sirul vid daca nu a fost ghicita pozitia).
+e. Un serviciu REST care permite adaugarea unei noi configuratii pentru joc (pozitie pe tabla si text indiciu).
+Ex: Pentru configuratia (2,2, 'Mergi la usa 4!') indiciul va fi plasat pe linia 2, coloana 2 si va avea textul 'Mergi la usa 4'
+
+2. Jocul X-0 cu calculatorul. Fiecare participant la joc (jucatorul si calculatorul) marcheaza pe rand cate o casuta dintr-un tabel cu 3 linii si 3 coloane (jucatorul cu X, calculatorul cu 0). Participantul care reuseste primul sa marcheze 3 casute adiacente pe orizontala, verticala sau diagonala castiga jocul. Jucatorul poate sa faca urmatoarele:
+a. Incepere joc. Pentru a porni un joc, jucatorul isi introduce aliasul asociat. Dupa verificarea ca aliasul corespunde unui jucator inregistrat in aplicatie, este afisata o tabela de joc goala si clasamentul tuturor jocurilor finalizate pana atunci.
+b. Alegere pozitie. Jucatorul alege o pozitie nemarcata de pe tabla, iar aplicatia afiseaza X pe pozitia respectiva. Daca in urma alegerii aceste pozitii jocul nu se termina, aplicatia va afisa pe o pozitie nemarcata, generata aleator, alegerea calculatorului (va aparea 0 pe tabla de joc).
+c. Final joc. Jocul se termina cand un participant (jucatorul sau calculatorul) castiga jocul, sau cand nu mai sunt pozitii nemarcate pe tabla (remiza). Daca castiga jucatorul, acesta primeste 10 puncte, daca castiga calculatorul jucatorul primeste -10 puncte, iar daca este remiza, jucatorul primeste 5 puncte. La finalul jocului, jucatorul va putea vizualiza numarul de puncte obtinute si pozitia lui in clasamentul tuturor jocurilor finalizate pentru atunci. Pentru fiecare joc, in clasament se va afisa alias-ul jucatorului, nr de puncte obtinute si durata jocului (in secunde). Daca in timpul jocului, un alt jucator a finalizat un joc, clasamentul se va actualiza automat pentru a include si rezultatul respectiv. Jocurile vor fi afisate in ordine descrescatoare dupa numarul de puncte si durata jocului.
+d. Un serviciu REST care pentru un anumit jucator, permite vizualizarea jocurilor castigate de el, in ordine descrescatoare dupa durata jocului.
+e. Un serviciu REST care, pentru un anumit joc, permite marcarea unei pozitii alese de jucator. De exemplu, pentru jocul 5 si pozitia (2,2) va fi marcata cu X pozitia respectiva.
+
+3. Un joc cu un jucator. La inceputul jocului, sistemul va alege aleator 5 cuvinte din baza de date pentru un joc de tip memory game, cu 10 elemente. Se genereaza aleator o configuratie care contine cele 5 cuvinte (fiecare cuvant apare de 2 ori). Scopul jocului este ca jucatorul sa identifice perechile de cuvinte, din cat mai putine incercari. Jucatorul poate sa faca urmatoarele:
+a. Incepere joc. Pentru a porni un joc, jucatorul isi introduce aliasul asociat. Dupa verificarea ca aliasul corespunde unui jucator inregistrat in aplicatie, este afisata o configuratie initial goala si clasamentul tuturor jocurilor finalizate.
+b. Alegere pereche. Jucatorul alege doua elemente unde crede ca se afla acelasi cuvant, iar aplicatia afiseaza cuvintele de la pozitiile respective. Daca cuvintele de la pozitiile alese sunt identice, jucatorul primeste -2 puncte si cuvintele raman vizibile. Daca cuvintele de la pozitiile alese sunt diferite, cuvintele vor deveni invizibile sau ascunse, iar jucatorul primeste 3 puncte. 
+c. Final joc. Jocul se termina cand devin vizibile toate cele 5 perechi de cuvinte sau cand s-au ales deja 10 perechi de pozitii (care conditie apare prima). La finalul jocului, jucatorul va putea vizualiza numarul de puncte obtinute, pozitiile tuturor cuvintelor in configuratie si pozitia lui in clasamentul tuturor jocurilor finalizate pana atunci. Pentru fiecare joc, in clasament se va afisa alias-ul jucatorului, nr de puncte obtinute si durata jocului (in secunde). Daca in timp ce un jucator alege perechile de pozitii, un alt jucator a finalizat un joc, clasamentul se va actualiza automat pentru a include si rezultatul respectiv. Jocurile vor fi afisate in ordine crescatoare dupa nr de puncte si durata jocului.
+d. Un serviciu REST care pentru un anumit jucator, permite vizualizarea aliasului jucatorului care l-a jucat, a perechilor de pozitii propuse, configuratia jocului si punctajul total obtinut de jucator.
+e. Un serviciu REST care permite modificarea unei configuratii salvate in baza de date. De exemplu, configuratia ('a','b','a','c','b','d','d','c','e','e') va fi inlocuita cu ('a','e','a','c','e','b','b','c','d','d').
+

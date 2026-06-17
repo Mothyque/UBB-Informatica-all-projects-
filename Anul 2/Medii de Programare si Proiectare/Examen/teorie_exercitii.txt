@@ -1,0 +1,13 @@
+- Descrieti o tehnica ORM pentru maparea mostenirii
+- Descrieti structura unui token JWT
+- Explicati cum functioneaza sablonul Proxy distribuit
+- Descrieti modelul Publish-Subscribe din comunicare asincrona
+- Explicati conceptul de Dependency Injection
+- Descrieti o tehnica ORM pentru maparea membrilor statici
+- Explicati termenul ORM Impendance mismatch
+- Explicati Modelul Point-to-Point din comunicare asincrona
+- Explicati ce intelegeti prin inversion of control 
+- Explicati ce inseamna un Broker de mesaje
+- Explicati constrangerea stateless a arhitecturii REST
+- Explicati cum functioneaza protocolul websocket
+- Explicati sablonul Data Transfer Object
