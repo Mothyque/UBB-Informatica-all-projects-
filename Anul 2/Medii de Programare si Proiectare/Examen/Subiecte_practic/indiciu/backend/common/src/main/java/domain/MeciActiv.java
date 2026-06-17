@@ -1,6 +1,9 @@
 package domain;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class MeciActiv {
     private Long idJoc;
@@ -11,17 +14,17 @@ public class MeciActiv {
     private String[] tabla;
     private String dataOraInceput;
 
-    public MeciActiv(Long idJoc, String alias, Integer nrIncercari, String pozitiiPropuse, Configuratie configuratie) {
+    public MeciActiv(Long idJoc, String alias, Configuratie configuratie) {
         this.idJoc = idJoc;
         this.alias = alias;
-        this.nrIncercari = nrIncercari;
-        this.pozitiiPropuse = pozitiiPropuse;
+        this.nrIncercari = 0;
+        this.pozitiiPropuse = "";
         this.configuratie = configuratie;
-        this.tabla = new String[15];
-        for (int i = 0; i < 15; i++) {
+        this.tabla = new String[16];
+        for (int i = 0; i < 16; i++) {
             this.tabla[i] = " ";
         }
-        this.dataOraInceput = LocalTime.now().toString();
+        this.dataOraInceput = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
     public Long getIdJoc() {
@@ -55,5 +58,11 @@ public class MeciActiv {
     public void incearca(Integer linie, Integer coloana) {
         nrIncercari++;
         pozitiiPropuse += linie + "," + coloana + ";";
+    }
+
+    public void actualizeazaTabla(Integer linie, Integer coloana, Double distanta)
+    {
+        int index = linie * 4 + coloana;
+        tabla[index] = "" + distanta;
     }
 }

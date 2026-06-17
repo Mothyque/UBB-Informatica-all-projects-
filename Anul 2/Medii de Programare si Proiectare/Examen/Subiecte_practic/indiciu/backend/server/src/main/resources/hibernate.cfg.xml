@@ -16,7 +16,6 @@
         <mapping class="domain.Jucator"/>
         <mapping class="domain.Joc"/>
         <mapping class="domain.Configuratie"/>
-        <mapping class="domain.Cuvant"/>
 
     </session-factory>
 </hibernate-configuration>
