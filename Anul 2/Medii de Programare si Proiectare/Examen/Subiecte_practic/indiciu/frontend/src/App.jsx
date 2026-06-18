@@ -171,7 +171,7 @@ function App() {
   const isGameOver = isWon || isLost;
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto', alignItems: 'center' }}>
       <h1>Indiciu</h1>
       <hr />
 
@@ -235,7 +235,7 @@ function App() {
               <button onClick={handleJocNou} style={{ padding: '10px 20px', fontSize: '16px', marginTop: '10px', cursor: 'pointer' }}>
                 Joacă din Nou
               </button>
-            </div>
+            </div>  
           )}
         </div>
       )}
