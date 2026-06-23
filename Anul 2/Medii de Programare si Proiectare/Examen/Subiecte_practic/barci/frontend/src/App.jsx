@@ -123,7 +123,7 @@ function App() {
         }
         setNewPozitie('');
       }
-      catch (error) {
+      catch ( ) {
         setMesajEroare(error.message);
       }
     };
