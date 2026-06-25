@@ -381,7 +381,7 @@ c. URL respectiv poate fi partajat pe Facebook, Whatsapp, Skype, etc.
 - Care dintre urmatoarele sunt adevarate despre un server web:
 a. Un server web poate fi configurat sa accepte cereri prin protocolul HTTP pe portul 443
 b. Un server web poate fi configurat sa accepte cereri printr-un URL de forma file://
-c. Implicit un server web asteapta cereri prin protocolul HTTP pe portul 8 si cereri prin protocolul HTTPS pe portul 443
+c. Implicit un server web asteapta cereri prin protocolul HTTP pe portul 80 si cereri prin protocolul HTTPS pe portul 443
 
 - Dandu-se doua containere, unul parinte si unul fiu, care dintre urmatoarele pozitionari au sens:
 a. Pozitionarea unui fiu "absolute" in cadrul unui parinte cu pozitionare "relative"
