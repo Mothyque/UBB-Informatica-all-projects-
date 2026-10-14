@@ -1,0 +1,81 @@
+Tipuri simple:
+- int: numere intregi;
+- float: numere reale.
+
+Tip definit de utilizator:
+- Punct: structura cu doua componente reale, x si y.
+
+Declararea tipului definit de utilizator:
+Punct ::= struct Punct { float x; float y; }
+
+ID ::= [_a-zA-Z][_a-zA-Z0-9]{0,249}
+CONST_INT ::= [+-]?[0-9]+
+CONST_FLOAT ::= [+-]?[0-9]+(\.[0-9]*)?
+
+Atribuire:
+ID = <expr_art>;
+
+Intrare/iesire:
+citeste ID;
+afiseaza <expr_art>;
+
+
+Selectie:
+if (<cond>) {
+    <instructiuni>
+} else {
+    <instructiuni>
+}
+
+Ciclare:
+while (<cond>) {
+    <instructiuni>
+}
+
+Returnare:
+return <expr_art>;
+
+<function> ::= <antet> <corp>
+<antet> ::= <tip> ID ( <lista_decl> )
+<tip> ::= int | float | Punct
+<lista_decl> ::= <decl>, <lista_decl> | <decl>
+<decl> ::= <tip> ID
+<corp> ::= { <instr_comp> }
+<instr_comp> ::= <instr> <instr_comp> | <instr>
+<instr> ::= <decl> | <atr> | <instr_io> | <instr_if> | <instr_cicl> | <instr_return>
+<decl> ::= <tip> ID ; | <tip> ID = <expr_art> ;
+<atr> ::= ID = <expr_art> ;
+<instr_io> ::= citeste ID ; | afiseaza <expr_art> ;
+<instr_if> ::= if ( <cond> ) <corp> | if ( <cond> ) <corp> else <corp>
+<instr_cicl> ::= while ( <cond> ) <corp>
+<instr_return> ::= return <expr_art> ;
+<cond> ::= <expr_art> <op_rel> <expr_art> | <expr_art>
+<expr_art> ::= <expr_art> <op_art> <expr_art> | ID | CONST
+<op_art> ::= + | - | * | / | %
+<op_rel> ::= != | == | < | > | <= | >=
+
+PROGRAME CU ERORI
+
+eroare_mlp.cpp este valid in C++, dar invalid in MLP. Contine:
+- instructiunea for, care nu exista in gramatica MLP;
+- operatorul ++, care nu este definit in MLP.
+
+eroare_both.cpp contine doua erori atat in C++, cat si in MLP:
+- lipseste caracterul ';' dupa declararea unei variabile float;
+- tipul boolean nu este definit nici in C++, nici in MLP.
+
+ANALIZATORUL LEXICAL - CERINTA 4
+
+Implementarea se afla in analizator_lexical.cpp. Programul citeste un fisier
+sursa si afiseaza pentru fiecare lexema linia, atomul lexical si textul gasit.
+
+Compilare:
+g++ -std=c++17 analizator_lexical.cpp -o analizator_lexical.exe
+
+Rulare:
+analizator_lexical.exe program_test.mlp
+
+Analizatorul recunoaste cuvinte-cheie, identificatori, constante, operatori si
+separatori. Operatorii compusi (==, !=, <=, >=) sunt verificati inaintea celor
+formati dintr-un singur caracter. Spatiile si comentariile de forma // sunt
+ignorate, iar caracterele necunoscute sunt raportate cu numarul liniei.

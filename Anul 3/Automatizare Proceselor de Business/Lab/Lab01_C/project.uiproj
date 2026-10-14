@@ -1,0 +1,6 @@
+{
+  "Name": "Lab01_C",
+  "ProjectType": "Process",
+  "Description": "Guessing game",
+  "MainFile": "Main.xaml"
+}
