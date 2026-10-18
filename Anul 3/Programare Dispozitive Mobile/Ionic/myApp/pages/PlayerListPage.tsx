@@ -57,7 +57,7 @@ const PlayerListPage: React.FC = () => {
                   </h2>
                   <p>{player.team}</p>
                   <IonNote color="medium">
-                    PPG: {player.pointsPerGame} | Birth: {player.birthDate}
+                    PPG: {player.pointsPerGame} | Birth: {player.birthDate.toLocaleDateString()}
                   </IonNote>
                 </IonLabel>
               </IonItem>

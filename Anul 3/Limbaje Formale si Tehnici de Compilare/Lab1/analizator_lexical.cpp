@@ -1,149 +1,210 @@
-#include <cctype>
-#include <fstream>
-#include <iomanip>
 #include <iostream>
-#include <map>
+#include <fstream>
 #include <string>
-#include <unordered_set>
 #include <vector>
+#include <unordered_map>
+#include <algorithm>
+#include <cctype>
+#include <iomanip>
+
+using std::string;
+using std::vector;
+using std::unordered_map;
+using std::ifstream;
+using std::ofstream;
+using std::cout;
+using std::cerr;
+using std::to_string;
+using std::istreambuf_iterator;
+
+const unordered_map<string, int> COD_ATOM = {
+    {"ID", 0},
+    {"CONST", 1},
+    {"int", 2},
+    {"float", 3},
+    {"Punct", 4},
+    {"citeste", 5},
+    {"afiseaza", 6},
+    {"if", 7},
+    {"else", 8},
+    {"while", 9},
+    {"return", 10},
+    {"=", 11},
+    {"+", 12},
+    {"-", 13},
+    {"*", 14},
+    {"/", 15},
+    {"%", 16},
+    {"<", 17},
+    {">", 18},
+    {"<=", 19},
+    {">=", 20},
+    {"==", 21},
+    {"!=", 22},
+    {"(", 23},
+    {")", 24},
+    {"{", 25},
+    {"}", 26},
+    {";", 27},
+    {",", 28}
+};
+
+class SymbolTable {
+private:
+    vector<string> symbols;
+
+public:
+    int search(const string& lexeme) const {
+        auto it = lower_bound(symbols.begin(), symbols.end(), lexeme);
+        if (it != symbols.end() && *it == lexeme) {
+            return static_cast<int>(distance(symbols.begin(), it));
+        }
+        return -1;
+    }
+
+    int insert(const string& lexeme) {
+        auto it = lower_bound(symbols.begin(), symbols.end(), lexeme);
+        if (it != symbols.end() && *it == lexeme) {
+            return static_cast<int>(distance(symbols.begin(), it));
+        }
+        auto insertedIt = symbols.insert(it, lexeme);
+        return static_cast<int>(distance(symbols.begin(), insertedIt));
+    }
+
+    const string& getAt(int index) const {
+        return symbols.at(index);
+    }
+
+    size_t size() const {
+        return symbols.size();
+    }
+
+    const vector<string>& getAll() const {
+        return symbols;
+    }
+};
+
+struct FIPEntry {
+    int codAtom;
+    int codTS; 
+};
 
 struct Token {
-    std::string atom;
-    std::string lexeme;
+    string atomType;
+    string lexeme;
     int line;
 };
 
-const std::unordered_set<std::string> KEYWORDS = {
-    "int", "float", "Punct", "citeste", "afiseaza",
-    "if", "else", "while", "return"
-};
-
-const std::unordered_set<std::string> TWO_CHARACTER_OPERATORS = {
-    "!=", "==", "<=", ">="
-};
-
-const std::unordered_set<char> ONE_CHARACTER_TOKENS = {
-    '(', ')', '{', '}', ';', ',', '=', '+', '-', '*', '/', '%', '<', '>'
-};
-
-bool isIdentifierStart(char character) {
-    return std::isalpha(static_cast<unsigned char>(character)) || character == '_';
+bool isIdentifierStart(char c) {
+    return isalpha(static_cast<unsigned char>(c)) || c == '_';
 }
 
-bool isIdentifierPart(char character) {
-    return std::isalnum(static_cast<unsigned char>(character)) || character == '_';
+bool isIdentifierPart(char c) {
+    return isalnum(static_cast<unsigned char>(c)) || c == '_';
 }
 
-bool isNumberStart(const std::string& source, std::size_t position, const std::string& previousAtom) {
-    if (std::isdigit(static_cast<unsigned char>(source[position]))) {
+bool isNumberStart(const string& src, size_t pos, const string& prevAtom) {
+    if (isdigit(static_cast<unsigned char>(src[pos]))) {
         return true;
     }
-
-    if ((source[position] != '+' && source[position] != '-') ||
-        position + 1 >= source.size() ||
-        !std::isdigit(static_cast<unsigned char>(source[position + 1]))) {
-        return false;
+    if ((src[pos] == '+' || src[pos] == '-') && pos + 1 < src.size() &&
+        isdigit(static_cast<unsigned char>(src[pos + 1]))) {
+        return prevAtom.empty() || prevAtom == "=" || prevAtom == "(" ||
+               prevAtom == "," || prevAtom == "+" || prevAtom == "-" ||
+               prevAtom == "*" || prevAtom == "/" || prevAtom == "%" ||
+               prevAtom == "<" || prevAtom == ">" || prevAtom == "<=" ||
+               prevAtom == ">=" || prevAtom == "==" || prevAtom == "!=";
     }
-
-    return previousAtom.empty() || previousAtom == "=" || previousAtom == "(" ||
-           previousAtom == "," || previousAtom == "+" || previousAtom == "-" ||
-           previousAtom == "*" || previousAtom == "/" || previousAtom == "%";
+    return false;
 }
 
-void addToken(std::vector<Token>& tokens, const std::string& atom,
-              const std::string& lexeme, int line, std::string& previousAtom) {
-    tokens.push_back({atom, lexeme, line});
-    previousAtom = atom;
-}
-
-std::vector<Token> tokenize(const std::string& source, std::vector<std::string>& errors) {
-    std::vector<Token> tokens;
-    std::string previousAtom;
-    std::size_t position = 0;
+vector<Token> tokenize(const string& source, vector<string>& errors) {
+    vector<Token> tokens;
+    string previousAtom = "";
+    size_t pos = 0;
     int line = 1;
 
-    while (position < source.size()) {
-        char character = source[position];
+    while (pos < source.size()) {
+        char c = source[pos];
 
-        if (character == '\n') {
-            ++line;
-            ++position;
+        if (c == '\n') {
+            line++;
+            pos++;
             continue;
         }
 
-        if (std::isspace(static_cast<unsigned char>(character))) {
-            ++position;
+        if (isspace(static_cast<unsigned char>(c))) {
+            pos++;
             continue;
         }
 
-        if (character == '/' && position + 1 < source.size() && source[position + 1] == '/') {
-            position += 2;
-            while (position < source.size() && source[position] != '\n') {
-                ++position;
+        if (c == '/' && pos + 1 < source.size() && source[pos + 1] == '/') {
+            pos += 2;
+            while (pos < source.size() && source[pos] != '\n') {
+                pos++;
             }
             continue;
         }
 
-        if (isIdentifierStart(character)) {
-            std::size_t start = position++;
-            while (position < source.size() && isIdentifierPart(source[position])) {
-                ++position;
+        if (isIdentifierStart(c)) {
+            size_t start = pos++;
+            while (pos < source.size() && isIdentifierPart(source[pos])) {
+                pos++;
             }
+            string lexeme = source.substr(start, pos - start);
 
-            std::string lexeme = source.substr(start, position - start);
-            if (KEYWORDS.find(lexeme) != KEYWORDS.end()) {
-                addToken(tokens, lexeme, lexeme, line, previousAtom);
+            if (COD_ATOM.find(lexeme) != COD_ATOM.end() && lexeme != "ID" && lexeme != "CONST") {
+                tokens.push_back({lexeme, lexeme, line});
+                previousAtom = lexeme;
             } else if (lexeme.size() > 250) {
-                errors.push_back("Linia " + std::to_string(line) + ": identificatorul '" +
-                                 lexeme + "' depaseste 250 de caractere.");
+                errors.push_back("Linia " + to_string(line) + ": identificatorul depaseste 250 caractere: '" + lexeme + "'");
             } else {
-                addToken(tokens, "ID", lexeme, line, previousAtom);
+                tokens.push_back({"ID", lexeme, line});
+                previousAtom = "ID";
             }
             continue;
         }
 
-        if (isNumberStart(source, position, previousAtom)) {
-            std::size_t start = position;
-            if (source[position] == '+' || source[position] == '-') {
-                ++position;
+        if (isNumberStart(source, pos, previousAtom)) {
+            size_t start = pos;
+            if (source[pos] == '+' || source[pos] == '-') {
+                pos++;
             }
-            while (position < source.size() &&
-                   std::isdigit(static_cast<unsigned char>(source[position]))) {
-                ++position;
+            while (pos < source.size() && isdigit(static_cast<unsigned char>(source[pos]))) {
+                pos++;
             }
-
-            if (position < source.size() && source[position] == '.') {
-                ++position;
-                while (position < source.size() &&
-                       std::isdigit(static_cast<unsigned char>(source[position]))) {
-                    ++position;
+            if (pos < source.size() && source[pos] == '.') {
+                pos++;
+                while (pos < source.size() && isdigit(static_cast<unsigned char>(source[pos]))) {
+                    pos++;
                 }
             }
-
-            std::string lexeme = source.substr(start, position - start);
-            addToken(tokens, "CONST", lexeme, line, previousAtom);
+            string lexeme = source.substr(start, pos - start);
+            tokens.push_back({"CONST", lexeme, line});
+            previousAtom = "CONST";
             continue;
         }
 
-        if (position + 1 < source.size()) {
-            std::string twoCharacters = source.substr(position, 2);
-            if (TWO_CHARACTER_OPERATORS.find(twoCharacters) != TWO_CHARACTER_OPERATORS.end()) {
-                addToken(tokens, twoCharacters, twoCharacters, line, previousAtom);
-                position += 2;
+        if (pos + 1 < source.size()) {
+            string op2 = source.substr(pos, 2);
+            if (COD_ATOM.find(op2) != COD_ATOM.end()) {
+                tokens.push_back({op2, op2, line});
+                previousAtom = op2;
+                pos += 2;
                 continue;
             }
         }
 
-        if (ONE_CHARACTER_TOKENS.find(character) != ONE_CHARACTER_TOKENS.end()) {
-            std::string lexeme(1, character);
-            addToken(tokens, lexeme, lexeme, line, previousAtom);
-            ++position;
+        string op1(1, c);
+        if (COD_ATOM.find(op1) != COD_ATOM.end()) {
+            tokens.push_back({op1, op1, line});
+            previousAtom = op1;
+            pos++;
             continue;
         }
 
-        errors.push_back("Linia " + std::to_string(line) + ": caracter necunoscut '" +
-                         std::string(1, character) + "'.");
-        ++position;
+        errors.push_back("Linia " + to_string(line) + ": caracter necunoscut '" + string(1, c) + "'");
+        pos++;
     }
 
     return tokens;
@@ -151,37 +212,80 @@ std::vector<Token> tokenize(const std::string& source, std::vector<std::string>&
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
-        std::cerr << "Utilizare: analizator_lexical <fisier_sursa>\n";
+        cerr << "Utilizare: " << argv[0] << " <fisier_sursa>\n";
         return 1;
     }
 
-    std::ifstream input(argv[1]);
-    if (!input) {
-        std::cerr << "Eroare: fisierul '" << argv[1] << "' nu poate fi deschis.\n";
+    ifstream inputFile(argv[1]);
+    if (!inputFile) {
+        cerr << "Eroare la deschiderea fisierului '" << argv[1] << "'\n";
         return 1;
     }
 
-    std::string source((std::istreambuf_iterator<char>(input)),
-                       std::istreambuf_iterator<char>());
-    std::vector<std::string> errors;
-    std::vector<Token> tokens = tokenize(source, errors);
+    string source((istreambuf_iterator<char>(inputFile)),
+                       istreambuf_iterator<char>());
+    inputFile.close();
 
-    std::cout << std::left << std::setw(8) << "Linia"
-              << std::setw(16) << "Atom" << "Lexema\n";
-    std::cout << std::string(42, '-') << '\n';
-    for (const Token& token : tokens) {
-        std::cout << std::left << std::setw(8) << token.line
-                  << std::setw(16) << token.atom << token.lexeme << '\n';
+    vector<string> errors;
+    vector<Token> tokens = tokenize(source, errors);
+
+    if (!errors.empty()) {
+        cerr << "Au fost detectate erori lexicale:\n";
+        for (const auto& err : errors) {
+            cerr << "  " << err << "\n";
+        }
+        return 2;
     }
 
-    if (errors.empty()) {
-        std::cout << "\nAnaliza lexicala s-a incheiat fara erori.\n";
-    } else {
-        std::cout << "\nErori lexicale:\n";
-        for (const std::string& error : errors) {
-            std::cout << error << '\n';
+    SymbolTable ts;
+    for (const auto& token : tokens) {
+        if (token.atomType == "ID" || token.atomType == "CONST") {
+            ts.insert(token.lexeme);
         }
     }
 
-    return errors.empty() ? 0 : 2;
+    vector<FIPEntry> fip;
+    for (const auto& token : tokens) {
+        int cod = COD_ATOM.at(token.atomType);
+        int pozTS = -1;
+
+        if (token.atomType == "ID" || token.atomType == "CONST") {
+            pozTS = ts.search(token.lexeme); // indexul (0-based) din TS
+        }
+
+        fip.push_back({cod, pozTS});
+    }
+
+    ofstream tsFile("TS.txt");
+    if (!tsFile) {
+        cerr << "Nu s-a putut crea fisierul TS.txt\n";
+        return 1;
+    }
+    tsFile << "Pozitie_TS | Simbol\n";
+    tsFile << "--------------------\n";
+    for (size_t i = 0; i < ts.size(); ++i) {
+        tsFile << ts.getAt(i) << "\n";
+    }
+    tsFile.close();
+
+    ofstream fipFile("FIP.txt");
+    if (!fipFile) {
+        cerr << "Nu s-a putut crea fisierul FIP.txt\n";
+        return 1;
+    }
+    fipFile << "Cod_Atom | Pozitie_TS\n";
+    fipFile << "---------------------\n";
+    for (const auto& entry : fip) {
+        if (entry.codTS != -1) {
+            fipFile << entry.codAtom << " " << (entry.codTS + 1) << "\n";
+        } else {
+            fipFile << entry.codAtom << " -\n";
+        }
+    }
+    fipFile.close();
+
+    cout << "Analiza lexicala s-a realizat cu succes!\n";
+    cout << "Fisiere generate:\n  - TS.txt (" << ts.size() << " simboluri)\n  - FIP.txt (" << fip.size() << " atomi)\n";
+
+    return 0;
 }

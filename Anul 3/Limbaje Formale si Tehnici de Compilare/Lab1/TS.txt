@@ -1,0 +1,8 @@
+Pozitie_TS | Simbol
+--------------------
+0
+1
+index
+limita
+suma
+total

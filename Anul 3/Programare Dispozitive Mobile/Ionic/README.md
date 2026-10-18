@@ -8,7 +8,7 @@ The main entity represents a **Euroleague Player** with the required property ty
 - `name` (String): Full name of the player.
 - `team` (String): Current club (e.g. Panathinaikos, Real Madrid).
 - `pointsPerGame` (Numeric): Average scoring statistics per game.
-- `birthDate` (Date / ISO string): Date of birth (`YYYY-MM-DD`).
+- `birthDate` (Date): Date of birth (`YYYY-MM-DD` in the date input; serialized as ISO by the API).
 - `isCaptain` (Boolean): Flag indicating whether the player is team captain.
 
 ---

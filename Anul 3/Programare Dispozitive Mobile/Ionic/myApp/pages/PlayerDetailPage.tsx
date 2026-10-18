@@ -19,6 +19,8 @@ import { getPlayerById, createPlayer, updatePlayer, deletePlayer } from '../serv
 import { PlayerInput } from '../models/Player';
 import { usePlayers } from '../context/PlayerContext';
 
+const toDateInputValue = (date: Date): string => date.toISOString().split('T')[0];
+
 const PlayerDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ const PlayerDetailPage: React.FC = () => {
     name: '',
     team: '',
     pointsPerGame: 0,
-    birthDate: new Date().toISOString().split('T')[0],
+    birthDate: new Date(),
     isCaptain: false,
   });
 
@@ -141,8 +143,10 @@ const PlayerDetailPage: React.FC = () => {
                 label="Birth Date (Date)"
                 labelPlacement="stacked"
                 type="date"
-                value={formData.birthDate}
-                onIonInput={(e) => setFormData({ ...formData, birthDate: e.detail.value || '' })}
+                value={toDateInputValue(formData.birthDate)}
+                onIonInput={(e) =>
+                  setFormData({ ...formData, birthDate: new Date(e.detail.value || '') })
+                }
               />
             </IonItem>
 

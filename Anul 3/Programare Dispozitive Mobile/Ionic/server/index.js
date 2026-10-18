@@ -15,7 +15,7 @@ let players = [
     name: 'Kostas Sloukas',
     team: 'Panathinaikos AKTOR',
     pointsPerGame: 12.7,
-    birthDate: '1990-01-15',
+    birthDate: new Date('1990-01-15'),
     isCaptain: true
   },
   {
@@ -23,7 +23,7 @@ let players = [
     name: 'Facundo Campazzo',
     team: 'Real Madrid',
     pointsPerGame: 11.5,
-    birthDate: '1991-03-23',
+    birthDate: new Date('1991-03-23'),
     isCaptain: false
   },
   {
@@ -31,7 +31,7 @@ let players = [
     name: 'Mike James',
     team: 'AS Monaco',
     pointsPerGame: 17.9,
-    birthDate: '1990-08-18',
+    birthDate: new Date('1990-08-18'),
     isCaptain: true
   },
   {
@@ -39,7 +39,7 @@ let players = [
     name: 'Sasha Vezenkov',
     team: 'Olympiacos',
     pointsPerGame: 18.2,
-    birthDate: '1995-07-25',
+    birthDate: new Date('1995-07-25'),
     isCaptain: false
   }
 ];
@@ -52,6 +52,13 @@ function parseBoolean(value, fallback) {
     if (value.toLowerCase() === 'false') return false;
   }
   return Boolean(value);
+}
+
+function parseDate(value, fallback) {
+  if (value === undefined || value === '') return fallback;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return date;
 }
 
 const server = http.createServer(app);
@@ -100,9 +107,10 @@ app.post('/api/players', (req, res) => {
     name: String(name || ''),
     team: String(team || ''),
     pointsPerGame: Number(pointsPerGame || 0),
-    birthDate: String(birthDate || new Date().toISOString().split('T')[0]),
+    birthDate: parseDate(birthDate, new Date()),
     isCaptain: parseBoolean(isCaptain, false)
   };
+  if (!newPlayer.birthDate) return res.status(400).json({ error: 'Invalid birth date' });
   players.push(newPlayer);
   broadcast('player_created', newPlayer);
   res.status(201).json(newPlayer);
@@ -118,9 +126,10 @@ app.put('/api/players/:id', (req, res) => {
     name: name !== undefined ? String(name) : players[index].name,
     team: team !== undefined ? String(team) : players[index].team,
     pointsPerGame: pointsPerGame !== undefined ? Number(pointsPerGame) : players[index].pointsPerGame,
-    birthDate: birthDate !== undefined ? String(birthDate) : players[index].birthDate,
+    birthDate: parseDate(birthDate, players[index].birthDate),
     isCaptain: parseBoolean(isCaptain, players[index].isCaptain)
   };
+  if (!updatedPlayer.birthDate) return res.status(400).json({ error: 'Invalid birth date' });
 
   players[index] = updatedPlayer;
   broadcast('player_updated', updatedPlayer);

@@ -3,7 +3,7 @@ export interface Player {
     name: string;
     team: string;
     pointsPerGame: number;
-    birthDate: string;
+    birthDate: Date;
     isCaptain: boolean;
 }
 export type PlayerInput = Omit<Player, 'id'>;

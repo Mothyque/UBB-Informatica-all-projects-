@@ -5,24 +5,38 @@ const BASE_URL = 'http://localhost:3000';
 const API_URL = `${BASE_URL}/api/players`;
 const WS_URL = 'ws://localhost:3000';
 
+interface PlayerResponse extends Omit<Player, 'birthDate'> {
+  birthDate: string;
+}
+
+const fromApiPlayer = (player: PlayerResponse): Player => ({
+  ...player,
+  birthDate: new Date(player.birthDate),
+});
+
+const toApiPlayer = (player: PlayerInput | Partial<PlayerInput>) => ({
+  ...player,
+  ...(player.birthDate && { birthDate: player.birthDate.toISOString() }),
+});
+
 export const getPlayers = async (): Promise<Player[]> => {
-  const response = await axios.get<Player[]>(API_URL);
-  return response.data;
+  const response = await axios.get<PlayerResponse[]>(API_URL);
+  return response.data.map(fromApiPlayer);
 };
 
 export const getPlayerById = async (id: string): Promise<Player> => {
-  const response = await axios.get<Player>(`${API_URL}/${id}`);
-  return response.data;
+  const response = await axios.get<PlayerResponse>(`${API_URL}/${id}`);
+  return fromApiPlayer(response.data);
 };
 
 export const createPlayer = async (player: PlayerInput): Promise<Player> => {
-  const response = await axios.post<Player>(API_URL, player);
-  return response.data;
+  const response = await axios.post<PlayerResponse>(API_URL, toApiPlayer(player));
+  return fromApiPlayer(response.data);
 };
 
 export const updatePlayer = async (id: string, player: Partial<PlayerInput>): Promise<Player> => {
-  const response = await axios.put<Player>(`${API_URL}/${id}`, player);
-  return response.data;
+  const response = await axios.put<PlayerResponse>(`${API_URL}/${id}`, toApiPlayer(player));
+  return fromApiPlayer(response.data);
 };
 
 export const deletePlayer = async (id: string): Promise<void> => {
@@ -44,8 +58,11 @@ export const initWebSocket = (onMessage: (msg: WsMessage) => void): (() => void)
 
   ws.onmessage = (event) => {
     try {
-      const data: WsMessage = JSON.parse(event.data);
-      onMessage(data);
+      const data: WsMessage & { payload?: PlayerResponse } = JSON.parse(event.data);
+      onMessage({
+        ...data,
+        payload: data.payload ? fromApiPlayer(data.payload) : undefined,
+      });
     } catch (err) {
       console.error('[WebSocket] Eroare la parsarea mesajului:', err);
     }
