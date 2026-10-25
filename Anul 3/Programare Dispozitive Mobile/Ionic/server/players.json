@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "name": "Kostas Sloukas",
+    "team": "Panathinaikos AKTOR",
+    "pointsPerGame": 12.7,
+    "birthDate": "1990-01-15T00:00:00.000Z",
+    "isCaptain": true,
+    "userId": "u1"
+  },
+  {
+    "id": "2",
+    "name": "Facundo Campazzo",
+    "team": "Real Madrid",
+    "pointsPerGame": 11.5,
+    "birthDate": "1991-03-23T00:00:00.000Z",
+    "isCaptain": false,
+    "userId": "u1"
+  },
+  {
+    "id": "3",
+    "name": "Mike James",
+    "team": "AS Monaco",
+    "pointsPerGame": 17.9,
+    "birthDate": "1990-08-18T00:00:00.000Z",
+    "isCaptain": true,
+    "userId": "u2"
+  },
+  {
+    "id": "4",
+    "name": "Sasha Vezenkov",
+    "team": "Olympiacos",
+    "pointsPerGame": 18.2,
+    "birthDate": "1995-07-25T00:00:00.000Z",
+    "isCaptain": false,
+    "userId": "u2"
+  },
+  {
+    "id": "5",
+    "name": "Nikola Mirotic",
+    "team": "FC Barcelona",
+    "pointsPerGame": 15.3,
+    "birthDate": "1991-02-11T00:00:00.000Z",
+    "isCaptain": true,
+    "userId": "u1"
+  },
+  {
+    "id": "6",
+    "name": "Vasilije Micic",
+    "team": "Anadolu Efes",
+    "pointsPerGame": 14.8,
+    "birthDate": "1994-01-13T00:00:00.000Z",
+    "isCaptain": false,
+    "userId": "u2"
+  },
+  {
+    "id": "7",
+    "name": "Shane Larkin",
+    "team": "Anadolu Efes",
+    "pointsPerGame": 16.1,
+    "birthDate": "1992-10-02T00:00:00.000Z",
+    "isCaptain": true,
+    "userId": "u1"
+  },
+  {
+    "id": "8",
+    "name": "Nando De Colo",
+    "team": "Fenerbahce Beko",
+    "pointsPerGame": 13.4,
+    "birthDate": "1987-04-23T00:00:00.000Z",
+    "isCaptain": false,
+    "userId": "u2"
+  },
+  {
+    "id": "9",
+    "name": "Luka Doncic",
+    "team": "Real Madrid",
+    "pointsPerGame": 19.5,
+    "birthDate": "1999-02-28T00:00:00.000Z",
+    "isCaptain": true,
+    "userId": "u1"
+  },
+  {
+    "id": "10",
+    "name": "Jan Vesely",
+    "team": "Fenerbahce Beko",
+    "pointsPerGame": 12.9,
+    "birthDate": "1990-04-24T00:00:00.000Z",
+    "isCaptain": false,
+    "userId": "u2"
+  },
+  {
+    "id": "11",
+    "name": "Nikola Kalinic",
+    "team": "Crvena Zvezda",
+    "pointsPerGame": 10.7,
+    "birthDate": "1989-07-05T00:00:00.000Z",
+    "isCaptain": true,
+    "userId": "u1"
+  },
+  {
+    "id": "12",
+    "name": "Walter Tavares",
+    "team": "Real Madrid",
+    "pointsPerGame": 11.2,
+    "birthDate": "1992-03-22T00:00:00.000Z",
+    "isCaptain": false,
+    "userId": "u2"
+  }
+] 

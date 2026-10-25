@@ -15,7 +15,7 @@ import {
   IonSpinner
 } from '@ionic/react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getPlayerById, createPlayer, updatePlayer, deletePlayer } from '../services/playerApi';
+import { getPlayerById } from '../services/playerApi';
 import { PlayerInput } from '../models/Player';
 import { usePlayers } from '../context/PlayerContext';
 
@@ -24,7 +24,7 @@ const toDateInputValue = (date: Date): string => date.toISOString().split('T')[0
 const PlayerDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { refreshPlayers } = usePlayers();
+  const { savePlayer, removePlayer, players } = usePlayers();
   const isNew = id === 'new';
 
   const [formData, setFormData] = useState<PlayerInput>({
@@ -40,51 +40,49 @@ const PlayerDetailPage: React.FC = () => {
 
   useEffect(() => {
     if (!isNew && id) {
-      getPlayerById(id)
-        .then((data) => {
-          setFormData({
-            name: data.name,
-            team: data.team,
-            pointsPerGame: data.pointsPerGame,
-            birthDate: data.birthDate,
-            isCaptain: data.isCaptain,
-          });
-        })
-        .catch((err) => {
-          console.error(err);
-          setToastMessage('Nu s-a putut încărca jucătorul');
-        })
-        .finally(() => setLoading(false));
+      const existing = players.find((p) => p.id === id);
+      if (existing) {
+        setFormData({
+          name: existing.name,
+          team: existing.team,
+          pointsPerGame: existing.pointsPerGame,
+          birthDate: existing.birthDate,
+          isCaptain: existing.isCaptain,
+        });
+        setLoading(false);
+      } else {
+        getPlayerById(id)
+          .then((data) => {
+            setFormData({
+              name: data.name,
+              team: data.team,
+              pointsPerGame: data.pointsPerGame,
+              birthDate: data.birthDate,
+              isCaptain: data.isCaptain,
+            });
+          })
+          .catch(() => setToastMessage('Nu s-a putut încărca de pe server'))
+          .finally(() => setLoading(false));
+      }
     }
-  }, [id, isNew]);
+  }, [id, isNew, players]);
 
   const handleSave = async () => {
     try {
-      if (isNew) {
-        await createPlayer(formData);
-      } else if (id) {
-        await updatePlayer(id, formData);
-      } else {
-        setToastMessage('Jucătorul nu a fost identificat');
-        return;
-      }
-      await refreshPlayers();
+      await savePlayer(formData, isNew ? undefined : id);
       navigate(-1);
     } catch (err) {
-      console.error(err);
-      setToastMessage('Eroare la salvarea datelor');
+      setToastMessage('Eroare la salvare');
     }
   };
 
   const handleDelete = async () => {
     if (isNew || !id) return;
     try {
-      await deletePlayer(id);
-      await refreshPlayers();
+      await removePlayer(id);
       navigate(-1);
     } catch (err) {
-      console.error(err);
-      setToastMessage('Eroare la ștergerea jucătorului');
+      setToastMessage('Eroare la ștergere');
     }
   };
 

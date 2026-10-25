@@ -1,7 +1,9 @@
 import { Navigate, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSpinner, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { AuthProvider, useAuth } from '../context/AuthContext';
 import { PlayerProvider } from '../context/PlayerContext';
+import LoginPage from '../pages/LoginPage';
 import PlayerListPage from '../pages/PlayerListPage';
 import PlayerDetailPage from '../pages/PlayerDetailPage';
 
@@ -37,18 +39,49 @@ import './theme/variables.css';
 
 setupIonicReact();
 
+const AppRoutes: React.FC = () => {
+  const { isAuthenticated, loadingAuth } = useAuth();
+
+  if (loadingAuth) {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <IonSpinner name="crescent" />
+      </div>
+    );
+  }
+
+  return (
+    <IonRouterOutlet>
+      <Route
+        path="/login"
+        element={isAuthenticated ? <Navigate to="/players" replace /> : <LoginPage />}
+      />
+      <Route
+        path="/players"
+        element={isAuthenticated ? <PlayerListPage /> : <Navigate to="/login" replace />}
+      />
+      <Route
+        path="/players/:id"
+        element={isAuthenticated ? <PlayerDetailPage /> : <Navigate to="/login" replace />}
+      />
+      <Route
+        path="/"
+        element={<Navigate to={isAuthenticated ? '/players' : '/login'} replace />}
+      />
+    </IonRouterOutlet>
+  );
+};
+
 const App: React.FC = () => (
-  <PlayerProvider>
-    <IonApp>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/players" element={<PlayerListPage />} />
-          <Route path="/players/:id" element={<PlayerDetailPage />} />
-          <Route path="/" element={<Navigate to="/players" replace />} />
-        </IonRouterOutlet>
-      </IonReactRouter>
-    </IonApp>
-  </PlayerProvider>
+  <AuthProvider>
+    <PlayerProvider>
+      <IonApp>
+        <IonReactRouter>
+          <AppRoutes />
+        </IonReactRouter>
+      </IonApp>
+    </PlayerProvider>
+  </AuthProvider>
 );
 
 export default App;

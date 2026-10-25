@@ -256,13 +256,7 @@ int main(int argc, char* argv[]) {
         fip.push_back({cod, pozTS});
     }
 
-    ofstream tsFile("TS.txt");
-    if (!tsFile) {
-        cerr << "Nu s-a putut crea fisierul TS.txt\n";
-        return 1;
-    }
-    tsFile << "Pozitie_TS | Simbol\n";
-    tsFile << "--------------------\n";
+    std::ofstream tsFile("TS.txt");
     for (size_t i = 0; i < ts.size(); ++i) {
         tsFile << ts.getAt(i) << "\n";
     }

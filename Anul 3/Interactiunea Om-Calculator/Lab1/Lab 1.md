@@ -6,42 +6,24 @@ Identificați două exemple de obiecte prost proiectate din viața cotidiană (n
 fotografii de pe internet). Aduceți obiectele sau fotografii ale acestora și
 oferiți exemple similare bine proiectate ori sugestii de îmbunătățire.
 
-## Exemplul 1: Site-ul Federației Române de Baschet
-
-### Interfața analizată
-
-**Site:** [Federația Română de Baschet — FRB](https://www.frbaschet.ro/)
-
-![Captură a site-ului Federației Române de Baschet](images/frb.png)
+## Exemplul 1: Laptop Acer Aspire 3 A315
 
 ### Probleme identificate
 
-- Designul site-ului este depășit și nu este responsive, ceea ce face navigarea
-  dificilă.
-- Apar frecvent bug-uri, iar unele date sunt neactualizate.
-- Interfața este proiectată necorespunzător. De exemplu, bara din dreapta cu
-  trei linii nu funcționează atunci când fereastra este redimensionată.
+- Tastatura este foarte rigidă, ceea ce face dificilă tastarea rapidă și confortabilă.
+- Materialele folosite pentru carcasa laptopului sunt de calitate inferioară, ceea ce duce la o senzație de fragilitate și lipsă de durabilitate.
+- Trackpad-ul este mic și nu răspunde bine la gesturi, ceea ce afectează experiența de utilizare.
 
 ### Exemple similare, bine proiectate
 
-#### Site-ul EuroLeague
+#### Laptop-ul MacBook Pro 16 
 
-[Accesează site-ul EuroLeague](https://www.euroleague.net/)
-
-![Captură a site-ului EuroLeague](images/euroleague.png)
-
-#### Site-ul NBA
-
-[Accesează site-ul NBA](https://www.nba.com/)
-
-![Captură a site-ului NBA](images/nba.png)
+[Accesează site-ul MacBook Pro 16](https://altex.ro/laptop-apple-macbook-pro-16-z1fp001z2-apple-m4-pro-16-2-liquid-retina-xdr-24gb-ssd-2tb-20-core-gpu-macos-sequoia-silver-tastatura-layout-int/cpd/Z1FP001Z2/)
 
 ### Sugestii de îmbunătățire
-
-1. Realizarea unui redesign complet, responsive și modern.
-2. Actualizarea regulată a conținutului și eliminarea bug-urilor.
-3. Testarea interfeței pe dispozitive și rezoluții diferite, pentru a asigura o
-   experiență bună utilizatorilor.
+1. Redesign-ul tastaturii pentru a oferi o experiență de tastare mai confortabilă, cu taste mai moi și o cursă mai scurtă.
+2. Utilizarea unor materiale de calitate superioară pentru carcasa laptopului, pentru a oferi o senzație de durabilitate și soliditate.
+3. Mărirea dimensiunii trackpad-ului și îmbunătățirea sensibilității acestuia pentru a răspunde mai bine la gesturi și a oferi o experiență de utilizare mai fluidă.
 
 ## Exemplul 2: Mouse gaming Aqirys
 
