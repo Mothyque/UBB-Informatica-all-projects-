@@ -51,6 +51,9 @@ env/
 *.ear
 *.jar
 !gradle/wrapper/gradle-wrapper.jar
+# Gradle cache intern (generat local, nu se versioneaza)
+**/.gradle/**/*.bin
+**/.gradle/**/*.lock
 
 # === Node.js / Web Development ===
 node_modules/
