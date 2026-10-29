@@ -27,6 +27,18 @@ const AuthContext = createContext<AuthContextType>({
 const AUTH_TOKEN_KEY = 'euroleague_auth_token';
 const AUTH_USER_KEY = 'euroleague_auth_user';
 
+const isTokenExpired = (token: string): boolean => {
+  try {
+    const payload = token.split('.')[1];
+    const decoded = JSON.parse(
+      atob(payload.replace(/-/g, '+').replace(/_/g, '/'))
+    ) as { exp?: number };
+    return !decoded.exp || decoded.exp * 1000 <= Date.now();
+  } catch {
+    return true;
+  }
+};
+
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
@@ -36,11 +48,26 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const savedToken = localStorage.getItem(AUTH_TOKEN_KEY);
     const savedUser = localStorage.getItem(AUTH_USER_KEY);
 
-    if (savedToken && savedUser) {
+    if (savedToken && savedUser && !isTokenExpired(savedToken)) {
       setToken(savedToken);
       setUser(JSON.parse(savedUser));
+    } else {
+      localStorage.removeItem(AUTH_TOKEN_KEY);
+      localStorage.removeItem(AUTH_USER_KEY);
     }
     setLoadingAuth(false);
+  }, []);
+
+  useEffect(() => {
+    const handleAuthExpired = () => {
+      setToken(null);
+      setUser(null);
+      localStorage.removeItem(AUTH_TOKEN_KEY);
+      localStorage.removeItem(AUTH_USER_KEY);
+    };
+
+    window.addEventListener('auth-expired', handleAuthExpired);
+    return () => window.removeEventListener('auth-expired', handleAuthExpired);
   }, []);
 
   const login = async (username: string, password: string) => {

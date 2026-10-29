@@ -7,6 +7,9 @@ export interface Player {
     isCaptain: boolean;
     userId?: string;
     notSynced?: boolean; 
+    photo?: string;
+    latitude?: number;
+    longitude?: number
 }
 export type PlayerInput = Omit<Player, 'id' | 'notSynced'>;
 

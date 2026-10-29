@@ -1,0 +1,11 @@
+a,b
+q1,q2,q3,q4,q5,q6
+q1
+q2,q6
+q1,q2,b
+q2,q2,b
+q1,q3,a
+q3,q4,b
+q4,q5,b
+q5,q4,b
+q5,q6,a

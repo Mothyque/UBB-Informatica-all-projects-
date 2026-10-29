@@ -12,7 +12,16 @@ const JWT_SECRET = 'euroleague_secret_key';
 const PLAYERS_FILE = path.join(__dirname, 'players.json');
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({limit: '10mb'}));
+
+app.get('/', (req, res) => {
+  res.json({
+    status: 'online',
+    message: 'Euroleague player API is running',
+    api: '/api',
+    websocket: 'ws://localhost:3000'
+  });
+});
 
 const users = [
   { id: "u1", username: "coach1", password: "password123" },
@@ -136,7 +145,7 @@ app.get('/api/players/:id', authenticateToken, (req, res) => {
 });
 
 app.post('/api/players', authenticateToken, (req, res) => {
-  const { name, team, pointsPerGame, birthDate, isCaptain } = req.body;
+  const { name, team, pointsPerGame, birthDate, isCaptain, photo, latitude, longitude } = req.body;
   const newPlayer = {
     id: Date.now().toString(),
     name: String(name || ''),
@@ -144,6 +153,9 @@ app.post('/api/players', authenticateToken, (req, res) => {
     pointsPerGame: Number(pointsPerGame || 0),
     birthDate: parseDate(birthDate, new Date()),
     isCaptain: parseBoolean(isCaptain, false),
+    photo: photo || '',
+    latitude: latitude !== undefined ? Number(latitude) : undefined,
+    longitude: longitude !== undefined ? Number(longitude) : undefined,
     userId: req.user.id
   };
   if (!newPlayer.birthDate) return res.status(400).json({ error: 'Invalid birth date' });
@@ -157,14 +169,17 @@ app.put('/api/players/:id', authenticateToken, (req, res) => {
   const index = players.findIndex((p) => p.id === req.params.id && p.userId === req.user.id);
   if (index === -1) return res.status(404).json({ error: 'Player not found' });
 
-  const { name, team, pointsPerGame, birthDate, isCaptain } = req.body;
+  const { name, team, pointsPerGame, birthDate, isCaptain, photo, latitude, longitude } = req.body;
   const updatedPlayer = {
     ...players[index],
     name: name !== undefined ? String(name) : players[index].name,
     team: team !== undefined ? String(team) : players[index].team,
     pointsPerGame: pointsPerGame !== undefined ? Number(pointsPerGame) : players[index].pointsPerGame,
     birthDate: parseDate(birthDate, players[index].birthDate),
-    isCaptain: parseBoolean(isCaptain, players[index].isCaptain)
+    isCaptain: parseBoolean(isCaptain, players[index].isCaptain),
+    photo: photo !== undefined ? String(photo) : players[index].photo,
+    latitude: latitude !== undefined ? Number(latitude) : players[index].latitude,
+    longitude: longitude !== undefined ? Number(longitude) : players[index].longitude
   };
   if (!updatedPlayer.birthDate) return res.status(400).json({ error: 'Invalid birth date' });
   players[index] = updatedPlayer;

@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useRef, useEffect } from 'react';
 import {
   IonContent,
   IonHeader,
@@ -22,6 +22,8 @@ import {
   IonSelectOption,
   IonInfiniteScroll,
   IonInfiniteScrollContent,
+  IonAvatar,
+  createAnimation
 } from '@ionic/react';
 import { add, personCircleOutline, logOutOutline } from 'ionicons/icons';
 import { useAuth } from '../context/AuthContext';
@@ -77,6 +79,27 @@ const PlayerListPage: React.FC = () => {
   };
 
   const hasMorePlayers = visibleCount < filteredPlayers.length;
+
+  const fabRef = useRef<HTMLIonFabElement>(null);
+
+  useEffect(() => {
+    if (fabRef.current) {
+      const animation = createAnimation()
+        .addElement(fabRef.current)
+        .duration(1500)
+        .iterations(Infinity)
+        .keyframes([
+          { offset: 0, transform: 'scale(1)'},
+          { offset: 0.5, transform: 'scale(1.12)'},
+          { offset: 1, transform: 'scale(1)'},
+        ]);
+      animation.play();
+
+      return () => {
+        animation.stop();
+      };
+    }
+  }, []);
 
   return (
     <IonPage>
@@ -145,7 +168,13 @@ const PlayerListPage: React.FC = () => {
                     key={player.id}
                     onClick={() => navigate(`/players/${player.id}`)}
                   >
-                    <IonIcon icon={personCircleOutline} slot="start" size="large" />
+                    <IonAvatar slot="start" style={{ width: '48px', height: '48px' }}>
+                      {player.photo ? (
+                        <img src={player.photo} alt={player.name} style={{ objectFit: 'cover' }} />
+                      ) : (
+                        <IonIcon icon={personCircleOutline} style={{ fontSize: '48px', color: '#888' }} />
+                      )}
+                    </IonAvatar>
                     <IonLabel>
                       <h2>
                         {player.name}
@@ -189,7 +218,7 @@ const PlayerListPage: React.FC = () => {
         )}
 
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton onClick={() => navigate('/players/new')}>
+          <IonFabButton ref={fabRef} onClick={() => navigate('/players/new')}>
             <IonIcon icon={add} />
           </IonFabButton>
         </IonFab>

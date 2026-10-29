@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode, useCallback } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode, useCallback, useRef } from 'react';
 import { normalizePlayer, Player, PlayerInput } from '../models/Player';
 import {
   getPlayers,
@@ -35,6 +35,9 @@ export const PlayerProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const { user, token } = useAuth();
   const isOnline = useNetworkStatus();
 
+  const isSyncingRef = useRef(false);
+  const lastSyncTriggerRef = useRef<string | null>(null);
+
   const [players, setPlayers] = useState<Player[]>(() => getLocalPlayers(user?.id));
   const [loading, setLoading] = useState<boolean>(false);
   const [notification, setNotification] = useState<string | null>(null);
@@ -44,29 +47,58 @@ export const PlayerProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     saveLocalPlayers(newPlayers, user?.id);
   };
 
-  const syncPendingItems = useCallback(async (currentList: Player[]) => {
+  const syncPendingItems = useCallback(async () => {
+    if (isSyncingRef.current) return;
+
+    const currentList = getLocalPlayers(user?.id);
     const pendingItems = currentList.filter((p) => p.notSynced);
     if (pendingItems.length === 0) return;
 
+    isSyncingRef.current = true;
     let updatedList = [...currentList];
+    let failedItems = 0;
 
-    for (const item of pendingItems) {
-      try {
-        const { notSynced, id, ...payload } = item;
-        if (id.startsWith('local_')) {
-          const created = await createPlayer(payload);
-          updatedList = updatedList.map((p) => (p.id === id ? { ...created, notSynced: false } : p));
-        } else {
-          const updated = await updatePlayer(id, payload);
-          updatedList = updatedList.map((p) => (p.id === id ? { ...updated, notSynced: false } : p));
+    try {
+      for (const item of pendingItems) {
+        try {
+          const payload: PlayerInput = {
+            name: item.name,
+            team: item.team,
+            pointsPerGame: Number(item.pointsPerGame) || 0,
+            birthDate:
+              item.birthDate instanceof Date
+                ? item.birthDate
+                : new Date(item.birthDate),
+            isCaptain: Boolean(item.isCaptain),
+            photo: item.photo || '',
+            latitude: item.latitude !== undefined ? Number(item.latitude) : undefined,
+            longitude: item.longitude !== undefined ? Number(item.longitude) : undefined,
+          };
+
+          if (item.id.startsWith('local_')) {
+            const created = await createPlayer(payload);
+            updatedList = updatedList.map((p) =>
+              p.id === item.id ? { ...created, notSynced: false } : p
+            );
+          } else {
+            const updated = await updatePlayer(item.id, payload);
+            updatedList = updatedList.map((p) =>
+              p.id === item.id ? { ...updated, notSynced: false } : p
+            );
+          }
+        } catch (err) {
+          failedItems += 1;
+          console.error('Eșec la sincronizarea elementului:', item.name, err);
         }
-      } catch (err) {
-        console.error('Eșec la sincronizarea elementului:', item.name, err);
       }
-    }
 
-    updatePlayersState(updatedList);
-    setNotification('Elementele salvate offline au fost sincronizate cu serverul!');
+      updatePlayersState(updatedList);
+      if (failedItems === 0) {
+        setNotification('Elementele salvate offline au fost sincronizate cu serverul!');
+      }
+    } finally {
+      isSyncingRef.current = false;
+    }
   }, [user?.id]);
 
   const fetchList = useCallback(async () => {
@@ -76,7 +108,7 @@ export const PlayerProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       try {
         setLoading(true);
         const serverData = await getPlayers();
-        const localOnly = players.filter((p) => p.notSynced);
+        const localOnly = getLocalPlayers(user?.id).filter((p) => p.notSynced);
         const merged = [
           ...localOnly,
           ...serverData.filter((s) => !localOnly.some((l) => l.id === s.id))
@@ -96,13 +128,20 @@ export const PlayerProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   }, [token, user?.id]);
 
   useEffect(() => {
-    if (isOnline && token) {
-      syncPendingItems(players);
-    }
-  }, [isOnline]);
+    const syncTrigger = `${token || 'anonymous'}:${isOnline}`;
+    if (lastSyncTriggerRef.current === syncTrigger) return;
 
-  useEffect(() => {
-    fetchList();
+    lastSyncTriggerRef.current = syncTrigger;
+
+    const loadAndSync = async () => {
+      await fetchList();
+      if (!token || !isOnline) return;
+
+      await syncPendingItems();
+      await fetchList();
+    };
+
+    void loadAndSync();
 
     if (!token) return;
 
@@ -135,7 +174,7 @@ export const PlayerProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     });
 
     return () => cleanupWs();
-  }, [token, user?.id]);
+  }, [fetchList, isOnline, syncPendingItems, token, user?.id]);
 
   const savePlayer = async (playerData: PlayerInput, id?: string) => {
     const isNew = !id || id === 'new';
